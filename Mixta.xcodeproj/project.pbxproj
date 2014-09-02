@@ -7,8 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1214144819B651F100BD3F8E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1214144519B651F100BD3F8E /* Bolts.framework */; };
+		1214144919B651F100BD3F8E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1214144619B651F100BD3F8E /* Parse.framework */; };
+		1214144A19B651F100BD3F8E /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1214144719B651F100BD3F8E /* ParseFacebookUtils.framework */; };
+		1214145F19B6539100BD3F8E /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1214145E19B6539100BD3F8E /* SignUpViewController.m */; };
+		1214146019B6561700BD3F8E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1214144B19B6532600BD3F8E /* AudioToolbox.framework */; };
+		1214146119B6561700BD3F8E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1214144C19B6532600BD3F8E /* CFNetwork.framework */; };
+		1214146219B6561700BD3F8E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270E5FA19B64BE600F19302 /* CoreGraphics.framework */; };
+		1214146319B6561700BD3F8E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1214144D19B6532600BD3F8E /* CoreLocation.framework */; };
+		1214146419B6561700BD3F8E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1214144F19B6532600BD3F8E /* MobileCoreServices.framework */; };
+		1214146519B6561700BD3F8E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1214145019B6532600BD3F8E /* QuartzCore.framework */; };
+		1214146619B6561700BD3F8E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1214145119B6532600BD3F8E /* Security.framework */; };
+		1214146719B6561700BD3F8E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1214145219B6532600BD3F8E /* StoreKit.framework */; };
+		1214146819B6561700BD3F8E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1214145319B6532600BD3F8E /* SystemConfiguration.framework */; };
+		1214146A19B6561800BD3F8E /* libSystem.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1214146919B6561800BD3F8E /* libSystem.dylib */; };
 		1270E5F919B64BE600F19302 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270E5F819B64BE600F19302 /* Foundation.framework */; };
-		1270E5FB19B64BE600F19302 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270E5FA19B64BE600F19302 /* CoreGraphics.framework */; };
 		1270E5FD19B64BE600F19302 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270E5FC19B64BE600F19302 /* UIKit.framework */; };
 		1270E60319B64BE600F19302 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1270E60119B64BE600F19302 /* InfoPlist.strings */; };
 		1270E60519B64BE600F19302 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1270E60419B64BE600F19302 /* main.m */; };
@@ -19,6 +32,9 @@
 		1270E61419B64BE600F19302 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270E5FC19B64BE600F19302 /* UIKit.framework */; };
 		1270E61C19B64BE600F19302 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1270E61A19B64BE600F19302 /* InfoPlist.strings */; };
 		1270E61E19B64BE600F19302 /* MixtaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1270E61D19B64BE600F19302 /* MixtaTests.m */; };
+		1270E62D19B65D8900F19302 /* SignUpBackgroundv2 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1270E62C19B65D8900F19302 /* SignUpBackgroundv2 2.png */; };
+		1270E63419B6723700F19302 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1270E63319B6723700F19302 /* SignInViewController.m */; };
+		1270E63719B677B400F19302 /* NewsFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1270E63619B677B400F19302 /* NewsFeedViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +48,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1214144519B651F100BD3F8E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		1214144619B651F100BD3F8E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		1214144719B651F100BD3F8E /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		1214144B19B6532600BD3F8E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		1214144C19B6532600BD3F8E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1214144D19B6532600BD3F8E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1214144E19B6532600BD3F8E /* libsp.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsp.dylib; path = usr/lib/libsp.dylib; sourceTree = SDKROOT; };
+		1214144F19B6532600BD3F8E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		1214145019B6532600BD3F8E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1214145119B6532600BD3F8E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1214145219B6532600BD3F8E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		1214145319B6532600BD3F8E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1214145D19B6539100BD3F8E /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpViewController.h; path = Mixta/SignUpViewController.h; sourceTree = "<group>"; };
+		1214145E19B6539100BD3F8E /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = Mixta/SignUpViewController.m; sourceTree = "<group>"; };
+		1214146919B6561800BD3F8E /* libSystem.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSystem.dylib; path = usr/lib/libSystem.dylib; sourceTree = SDKROOT; };
 		1270E5F519B64BE600F19302 /* Mixta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mixta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1270E5F819B64BE600F19302 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1270E5FA19B64BE600F19302 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -49,6 +80,11 @@
 		1270E61B19B64BE600F19302 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1270E61D19B64BE600F19302 /* MixtaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MixtaTests.m; sourceTree = "<group>"; };
 		1270E62719B64BFD00F19302 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		1270E62C19B65D8900F19302 /* SignUpBackgroundv2 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SignUpBackgroundv2 2.png"; sourceTree = "<group>"; };
+		1270E63219B6723700F19302 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		1270E63319B6723700F19302 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
+		1270E63519B677B400F19302 /* NewsFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsFeedViewController.h; sourceTree = "<group>"; };
+		1270E63619B677B400F19302 /* NewsFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsFeedViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +92,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1270E5FB19B64BE600F19302 /* CoreGraphics.framework in Frameworks */,
+				1214146A19B6561800BD3F8E /* libSystem.dylib in Frameworks */,
+				1214146019B6561700BD3F8E /* AudioToolbox.framework in Frameworks */,
+				1214146119B6561700BD3F8E /* CFNetwork.framework in Frameworks */,
+				1214146219B6561700BD3F8E /* CoreGraphics.framework in Frameworks */,
+				1214146319B6561700BD3F8E /* CoreLocation.framework in Frameworks */,
+				1214146419B6561700BD3F8E /* MobileCoreServices.framework in Frameworks */,
+				1214146519B6561700BD3F8E /* QuartzCore.framework in Frameworks */,
+				1214146619B6561700BD3F8E /* Security.framework in Frameworks */,
+				1214146719B6561700BD3F8E /* StoreKit.framework in Frameworks */,
+				1214146819B6561700BD3F8E /* SystemConfiguration.framework in Frameworks */,
 				1270E5FD19B64BE600F19302 /* UIKit.framework in Frameworks */,
+				1214144A19B651F100BD3F8E /* ParseFacebookUtils.framework in Frameworks */,
 				1270E5F919B64BE600F19302 /* Foundation.framework in Frameworks */,
+				1214144819B651F100BD3F8E /* Bolts.framework in Frameworks */,
+				1214144919B651F100BD3F8E /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +123,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1214144419B651F100BD3F8E /* parse-library-1.2.21 */ = {
+			isa = PBXGroup;
+			children = (
+				1214144519B651F100BD3F8E /* Bolts.framework */,
+				1214144619B651F100BD3F8E /* Parse.framework */,
+				1214144719B651F100BD3F8E /* ParseFacebookUtils.framework */,
+			);
+			name = "parse-library-1.2.21";
+			path = "../parse-library-1.2.21";
+			sourceTree = "<group>";
+		};
 		1270E5EC19B64BE600F19302 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +157,17 @@
 		1270E5F719B64BE600F19302 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1214146919B6561800BD3F8E /* libSystem.dylib */,
+				1214144B19B6532600BD3F8E /* AudioToolbox.framework */,
+				1214144C19B6532600BD3F8E /* CFNetwork.framework */,
+				1214144D19B6532600BD3F8E /* CoreLocation.framework */,
+				1214144E19B6532600BD3F8E /* libsp.dylib */,
+				1214144F19B6532600BD3F8E /* MobileCoreServices.framework */,
+				1214145019B6532600BD3F8E /* QuartzCore.framework */,
+				1214145119B6532600BD3F8E /* Security.framework */,
+				1214145219B6532600BD3F8E /* StoreKit.framework */,
+				1214145319B6532600BD3F8E /* SystemConfiguration.framework */,
+				1214144419B651F100BD3F8E /* parse-library-1.2.21 */,
 				1270E5F819B64BE600F19302 /* Foundation.framework */,
 				1270E5FA19B64BE600F19302 /* CoreGraphics.framework */,
 				1270E5FC19B64BE600F19302 /* UIKit.framework */,
@@ -109,9 +179,11 @@
 		1270E5FE19B64BE600F19302 /* Mixta */ = {
 			isa = PBXGroup;
 			children = (
+				1270E62E19B6720900F19302 /* Views */,
 				1270E60719B64BE600F19302 /* AppDelegate.h */,
 				1270E60819B64BE600F19302 /* AppDelegate.m */,
 				1270E60A19B64BE600F19302 /* Images.xcassets */,
+				1270E62C19B65D8900F19302 /* SignUpBackgroundv2 2.png */,
 				1270E5FF19B64BE600F19302 /* Supporting Files */,
 			);
 			path = Mixta;
@@ -144,6 +216,20 @@
 				1270E61A19B64BE600F19302 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1270E62E19B6720900F19302 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1214145D19B6539100BD3F8E /* SignUpViewController.h */,
+				1214145E19B6539100BD3F8E /* SignUpViewController.m */,
+				1270E63219B6723700F19302 /* SignInViewController.h */,
+				1270E63319B6723700F19302 /* SignInViewController.m */,
+				1270E63519B677B400F19302 /* NewsFeedViewController.h */,
+				1270E63619B677B400F19302 /* NewsFeedViewController.m */,
+			);
+			name = Views;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1270E62D19B65D8900F19302 /* SignUpBackgroundv2 2.png in Resources */,
 				1270E60319B64BE600F19302 /* InfoPlist.strings in Resources */,
 				1270E60B19B64BE600F19302 /* Images.xcassets in Resources */,
 			);
@@ -241,8 +328,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1270E63419B6723700F19302 /* SignInViewController.m in Sources */,
 				1270E60919B64BE600F19302 /* AppDelegate.m in Sources */,
 				1270E60519B64BE600F19302 /* main.m in Sources */,
+				1270E63719B677B400F19302 /* NewsFeedViewController.m in Sources */,
+				1214145F19B6539100BD3F8E /* SignUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +449,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/kaidonaldag/Desktop/developer/parse-library-1.2.21",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mixta/Mixta-Prefix.pch";
 				INFOPLIST_FILE = "Mixta/Mixta-Info.plist";
@@ -372,6 +466,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/kaidonaldag/Desktop/developer/parse-library-1.2.21",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mixta/Mixta-Prefix.pch";
 				INFOPLIST_FILE = "Mixta/Mixta-Info.plist";
@@ -439,6 +537,7 @@
 				1270E62319B64BE600F19302 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1270E62419B64BE600F19302 /* Build configuration list for PBXNativeTarget "MixtaTests" */ = {
 			isa = XCConfigurationList;
@@ -447,6 +546,7 @@
 				1270E62619B64BE600F19302 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

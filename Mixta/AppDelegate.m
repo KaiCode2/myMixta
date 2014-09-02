@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "SignInViewController.h"
+#import "NewsFeedViewController.h"
+#import <Parse/Parse.h>
 
 @implementation AppDelegate
 
@@ -14,6 +17,18 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    [Parse setApplicationId:@"X3ZdLeraoNjySo0k7AdcNPAASrukyNpylFHXsAax"
+                  clientKey:@"EaHUjTKDA4LNvF63Cz9eRQitl8b3YjZAZtjm02VA"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    SignInViewController *signUpViewController = [[SignInViewController alloc]init];
+    NewsFeedViewController *homeViewCon = [[NewsFeedViewController alloc]init];
+    
+    if ([PFUser currentUser]) {
+        self.window.rootViewController = homeViewCon;
+    }else{
+        self.window.rootViewController = signUpViewController;
+    }
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
