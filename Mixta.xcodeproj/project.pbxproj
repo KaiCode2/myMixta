@@ -32,9 +32,21 @@
 		1270E61419B64BE600F19302 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270E5FC19B64BE600F19302 /* UIKit.framework */; };
 		1270E61C19B64BE600F19302 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1270E61A19B64BE600F19302 /* InfoPlist.strings */; };
 		1270E61E19B64BE600F19302 /* MixtaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1270E61D19B64BE600F19302 /* MixtaTests.m */; };
-		1270E62D19B65D8900F19302 /* SignUpBackgroundv2 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1270E62C19B65D8900F19302 /* SignUpBackgroundv2 2.png */; };
 		1270E63419B6723700F19302 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1270E63319B6723700F19302 /* SignInViewController.m */; };
 		1270E63719B677B400F19302 /* NewsFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1270E63619B677B400F19302 /* NewsFeedViewController.m */; };
+		1270E63A19B68A1400F19302 /* cameraIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1270E63919B68A1400F19302 /* cameraIcon.png */; };
+		1270E63C19B773CA00F19302 /* profile7.png in Resources */ = {isa = PBXBuildFile; fileRef = 1270E63B19B773CA00F19302 /* profile7.png */; };
+		1270E64019B7848300F19302 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1270E63F19B7848300F19302 /* IntroViewController.m */; };
+		1270E64219B78F0000F19302 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270E64119B78EFF00F19302 /* Social.framework */; };
+		1270E64419B78FDC00F19302 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270E64319B78FDC00F19302 /* Accounts.framework */; };
+		1270E64619B79AE900F19302 /* introBackground1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1270E64519B79AE800F19302 /* introBackground1.png */; };
+		1270E64919B7C82C00F19302 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1270E64819B7C82C00F19302 /* ProfileViewController.m */; };
+		1270E64D19B7C8ED00F19302 /* FindFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1270E64C19B7C8ED00F19302 /* FindFriendsViewController.m */; };
+		1270E65119B7CCB300F19302 /* letter28.png in Resources */ = {isa = PBXBuildFile; fileRef = 1270E64E19B7CCB300F19302 /* letter28.png */; };
+		1270E65219B7CCB300F19302 /* searching33.png in Resources */ = {isa = PBXBuildFile; fileRef = 1270E64F19B7CCB300F19302 /* searching33.png */; };
+		1270E65319B7CCB300F19302 /* user47.png in Resources */ = {isa = PBXBuildFile; fileRef = 1270E65019B7CCB300F19302 /* user47.png */; };
+		1270E65719B7D4DB00F19302 /* SignUpBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = 1270E65619B7D4DB00F19302 /* SignUpBackGround.png */; };
+		C08B6872E76748559B12D8DC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0889530C9C3458381C6259B /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,12 +91,28 @@
 		1270E61919B64BE600F19302 /* MixtaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MixtaTests-Info.plist"; sourceTree = "<group>"; };
 		1270E61B19B64BE600F19302 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1270E61D19B64BE600F19302 /* MixtaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MixtaTests.m; sourceTree = "<group>"; };
-		1270E62719B64BFD00F19302 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		1270E62C19B65D8900F19302 /* SignUpBackgroundv2 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SignUpBackgroundv2 2.png"; sourceTree = "<group>"; };
+		1270E62719B64BFD00F19302 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		1270E63219B6723700F19302 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		1270E63319B6723700F19302 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		1270E63519B677B400F19302 /* NewsFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsFeedViewController.h; sourceTree = "<group>"; };
 		1270E63619B677B400F19302 /* NewsFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsFeedViewController.m; sourceTree = "<group>"; };
+		1270E63919B68A1400F19302 /* cameraIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cameraIcon.png; path = Mixta/cameraIcon.png; sourceTree = "<group>"; };
+		1270E63B19B773CA00F19302 /* profile7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile7.png; path = Mixta/profile7.png; sourceTree = "<group>"; };
+		1270E63E19B7848300F19302 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
+		1270E63F19B7848300F19302 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
+		1270E64119B78EFF00F19302 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		1270E64319B78FDC00F19302 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		1270E64519B79AE800F19302 /* introBackground1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = introBackground1.png; sourceTree = "<group>"; };
+		1270E64719B7C82C00F19302 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = Mixta/ProfileViewController.h; sourceTree = "<group>"; };
+		1270E64819B7C82C00F19302 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = Mixta/ProfileViewController.m; sourceTree = "<group>"; };
+		1270E64B19B7C8ED00F19302 /* FindFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FindFriendsViewController.h; path = Mixta/FindFriendsViewController.h; sourceTree = "<group>"; };
+		1270E64C19B7C8ED00F19302 /* FindFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FindFriendsViewController.m; path = Mixta/FindFriendsViewController.m; sourceTree = "<group>"; };
+		1270E64E19B7CCB300F19302 /* letter28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = letter28.png; sourceTree = "<group>"; };
+		1270E64F19B7CCB300F19302 /* searching33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searching33.png; sourceTree = "<group>"; };
+		1270E65019B7CCB300F19302 /* user47.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user47.png; sourceTree = "<group>"; };
+		1270E65619B7D4DB00F19302 /* SignUpBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUpBackGround.png; sourceTree = "<group>"; };
+		1E5DDF469D934893862BCE62 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		E0889530C9C3458381C6259B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +120,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1270E64419B78FDC00F19302 /* Accounts.framework in Frameworks */,
+				1270E64219B78F0000F19302 /* Social.framework in Frameworks */,
 				1214146A19B6561800BD3F8E /* libSystem.dylib in Frameworks */,
 				1214146019B6561700BD3F8E /* AudioToolbox.framework in Frameworks */,
 				1214146119B6561700BD3F8E /* CFNetwork.framework in Frameworks */,
@@ -107,6 +137,7 @@
 				1270E5F919B64BE600F19302 /* Foundation.framework in Frameworks */,
 				1214144819B651F100BD3F8E /* Bolts.framework in Frameworks */,
 				1214144919B651F100BD3F8E /* Parse.framework in Frameworks */,
+				C08B6872E76748559B12D8DC /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +173,7 @@
 				1270E61719B64BE600F19302 /* MixtaTests */,
 				1270E5F719B64BE600F19302 /* Frameworks */,
 				1270E5F619B64BE600F19302 /* Products */,
+				1E5DDF469D934893862BCE62 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,6 +189,8 @@
 		1270E5F719B64BE600F19302 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1270E64319B78FDC00F19302 /* Accounts.framework */,
+				1270E64119B78EFF00F19302 /* Social.framework */,
 				1214146919B6561800BD3F8E /* libSystem.dylib */,
 				1214144B19B6532600BD3F8E /* AudioToolbox.framework */,
 				1214144C19B6532600BD3F8E /* CFNetwork.framework */,
@@ -172,6 +206,7 @@
 				1270E5FA19B64BE600F19302 /* CoreGraphics.framework */,
 				1270E5FC19B64BE600F19302 /* UIKit.framework */,
 				1270E61119B64BE600F19302 /* XCTest.framework */,
+				E0889530C9C3458381C6259B /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -179,11 +214,11 @@
 		1270E5FE19B64BE600F19302 /* Mixta */ = {
 			isa = PBXGroup;
 			children = (
-				1270E62E19B6720900F19302 /* Views */,
 				1270E60719B64BE600F19302 /* AppDelegate.h */,
 				1270E60819B64BE600F19302 /* AppDelegate.m */,
+				1270E62E19B6720900F19302 /* Views */,
 				1270E60A19B64BE600F19302 /* Images.xcassets */,
-				1270E62C19B65D8900F19302 /* SignUpBackgroundv2 2.png */,
+				1270E63D19B773CD00F19302 /* images */,
 				1270E5FF19B64BE600F19302 /* Supporting Files */,
 			);
 			path = Mixta;
@@ -221,15 +256,52 @@
 		1270E62E19B6720900F19302 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1214145D19B6539100BD3F8E /* SignUpViewController.h */,
-				1214145E19B6539100BD3F8E /* SignUpViewController.m */,
-				1270E63219B6723700F19302 /* SignInViewController.h */,
-				1270E63319B6723700F19302 /* SignInViewController.m */,
-				1270E63519B677B400F19302 /* NewsFeedViewController.h */,
-				1270E63619B677B400F19302 /* NewsFeedViewController.m */,
+				1270E63819B6811400F19302 /* Sign in adn sign up */,
+				1270E64A19B7C83D00F19302 /* social */,
 			);
 			name = Views;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		1270E63819B6811400F19302 /* Sign in adn sign up */ = {
+			isa = PBXGroup;
+			children = (
+				1214145D19B6539100BD3F8E /* SignUpViewController.h */,
+				1214145E19B6539100BD3F8E /* SignUpViewController.m */,
+				1270E63E19B7848300F19302 /* IntroViewController.h */,
+				1270E63F19B7848300F19302 /* IntroViewController.m */,
+				1270E63219B6723700F19302 /* SignInViewController.h */,
+				1270E63319B6723700F19302 /* SignInViewController.m */,
+			);
+			name = "Sign in adn sign up";
+			sourceTree = "<group>";
+		};
+		1270E63D19B773CD00F19302 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				1270E64E19B7CCB300F19302 /* letter28.png */,
+				1270E64F19B7CCB300F19302 /* searching33.png */,
+				1270E65019B7CCB300F19302 /* user47.png */,
+				1270E64519B79AE800F19302 /* introBackground1.png */,
+				1270E65619B7D4DB00F19302 /* SignUpBackGround.png */,
+				1270E63919B68A1400F19302 /* cameraIcon.png */,
+				1270E63B19B773CA00F19302 /* profile7.png */,
+			);
+			name = images;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		1270E64A19B7C83D00F19302 /* social */ = {
+			isa = PBXGroup;
+			children = (
+				1270E63519B677B400F19302 /* NewsFeedViewController.h */,
+				1270E63619B677B400F19302 /* NewsFeedViewController.m */,
+				1270E64719B7C82C00F19302 /* ProfileViewController.h */,
+				1270E64819B7C82C00F19302 /* ProfileViewController.m */,
+				1270E64B19B7C8ED00F19302 /* FindFriendsViewController.h */,
+				1270E64C19B7C8ED00F19302 /* FindFriendsViewController.m */,
+			);
+			name = social;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,9 +311,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1270E62119B64BE600F19302 /* Build configuration list for PBXNativeTarget "Mixta" */;
 			buildPhases = (
+				EE67D3F55D02476882E48DE2 /* Check Pods Manifest.lock */,
 				1270E5F119B64BE600F19302 /* Sources */,
 				1270E5F219B64BE600F19302 /* Frameworks */,
 				1270E5F319B64BE600F19302 /* Resources */,
+				DD29372D739C4610BC4199F6 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -307,9 +381,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1270E62D19B65D8900F19302 /* SignUpBackgroundv2 2.png in Resources */,
+				1270E65119B7CCB300F19302 /* letter28.png in Resources */,
+				1270E64619B79AE900F19302 /* introBackground1.png in Resources */,
+				1270E65319B7CCB300F19302 /* user47.png in Resources */,
 				1270E60319B64BE600F19302 /* InfoPlist.strings in Resources */,
+				1270E65219B7CCB300F19302 /* searching33.png in Resources */,
 				1270E60B19B64BE600F19302 /* Images.xcassets in Resources */,
+				1270E63C19B773CA00F19302 /* profile7.png in Resources */,
+				1270E63A19B68A1400F19302 /* cameraIcon.png in Resources */,
+				1270E65719B7D4DB00F19302 /* SignUpBackGround.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,14 +403,50 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DD29372D739C4610BC4199F6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE67D3F55D02476882E48DE2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1270E5F119B64BE600F19302 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1270E63419B6723700F19302 /* SignInViewController.m in Sources */,
+				1270E64D19B7C8ED00F19302 /* FindFriendsViewController.m in Sources */,
+				1270E64019B7848300F19302 /* IntroViewController.m in Sources */,
 				1270E60919B64BE600F19302 /* AppDelegate.m in Sources */,
 				1270E60519B64BE600F19302 /* main.m in Sources */,
+				1270E64919B7C82C00F19302 /* ProfileViewController.m in Sources */,
 				1270E63719B677B400F19302 /* NewsFeedViewController.m in Sources */,
 				1214145F19B6539100BD3F8E /* SignUpViewController.m in Sources */,
 			);
@@ -446,6 +562,7 @@
 		};
 		1270E62219B64BE600F19302 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E5DDF469D934893862BCE62 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -456,6 +573,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mixta/Mixta-Prefix.pch";
 				INFOPLIST_FILE = "Mixta/Mixta-Info.plist";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -463,6 +581,7 @@
 		};
 		1270E62319B64BE600F19302 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E5DDF469D934893862BCE62 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -473,6 +592,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mixta/Mixta-Prefix.pch";
 				INFOPLIST_FILE = "Mixta/Mixta-Info.plist";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

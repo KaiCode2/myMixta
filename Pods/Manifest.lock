@@ -1,0 +1,16 @@
+PODS:
+  - EAIntroView (2.6.3)
+  - MBProgressHUD (0.9)
+  - RESideMenu (4.0.6)
+
+DEPENDENCIES:
+  - EAIntroView (~> 2.6.0)
+  - MBProgressHUD (~> 0.8)
+  - RESideMenu (~> 4.0.6)
+
+SPEC CHECKSUMS:
+  EAIntroView: 45924b81c153d1206ee24f4fa654e9d9dae79e93
+  MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
+  RESideMenu: 1d9293d36a2b23cac86c86033b80ee06c7dc9e71
+
+COCOAPODS: 0.33.1

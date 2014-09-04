@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface SignUpViewController : UIViewController
 
 @property (strong, nonatomic)NSString *username;
 @property (strong, nonatomic)NSString *password;
 @property (strong, nonatomic)NSString *email;
+
+@property (strong, nonatomic) PFFile *profilePicture;
 
 @end

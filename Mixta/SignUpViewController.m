@@ -7,12 +7,12 @@
 //
 
 #import "SignUpViewController.h"
-#import "NewsFeedViewController.h"
 #import "SignInViewController.h"
-#import <Parse/Parse.h>
+#import "IntroViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
-@interface SignUpViewController ()
+@interface SignUpViewController () <UIActionSheetDelegate, UIImagePickerControllerDelegate>
 
 @end
 
@@ -20,9 +20,12 @@
     UITextField *userNameField;
     UITextField *passwordField;
     UITextField *emailField;
+    UIImageView *profilePictureField;
     
     UIButton *signUp;
     UIButton *signIn;
+    
+    NSString *profilePictureTitle;
 }
 
 - (void)viewDidLoad {
@@ -33,6 +36,9 @@
                                                 cancelButtonTitle:nil
                                                 otherButtonTitles:@"OK", nil];
     [welcomeAlert show];
+    
+    profilePictureTitle = @"profilePicture";
+    
     UILabel *userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.view.center.x - 25, 50, 100, 50)];
     userNameLabel.backgroundColor = [UIColor clearColor];
     userNameLabel.text = @"Username";
@@ -64,6 +70,15 @@
     emailField.layer.masksToBounds = YES;
     emailField.autocorrectionType = UITextAutocorrectionTypeNo;
     
+    profilePictureField = [[UIImageView alloc]initWithFrame:CGRectMake(self.view.center.x - 50, 350, 100, 100)];
+    profilePictureField.image = [UIImage imageNamed:@"cameraIcon.png"];
+    profilePictureField.layer.cornerRadius = 10;
+    profilePictureField.layer.masksToBounds = YES;
+    UITapGestureRecognizer *selectImage = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(selectImage)];
+    [profilePictureField addGestureRecognizer:selectImage];
+    profilePictureField.backgroundColor = [UIColor whiteColor];
+    profilePictureField.userInteractionEnabled = YES;
+    
     signUp = [[UIButton alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height - 100, self.view.frame.size.width, 100)];
     [signUp addTarget:self action:@selector(createUser) forControlEvents:UIControlEventTouchUpInside];
     signUp.backgroundColor = [UIColor colorWithRed:0 green:0.25 blue:0.75 alpha:0.45];
@@ -76,6 +91,7 @@
     
     UITapGestureRecognizer *resignKeyboards = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(resignKeyboards)];
     [self.view addGestureRecognizer:resignKeyboards];
+    [self.view addSubview:profilePictureField];
     [self.view addSubview:signIn];
     [self.view addSubview:signUp];
     [self.view addSubview:emailLabel];
@@ -84,7 +100,7 @@
     [self.view addSubview:passwordField];
     [self.view addSubview:userNameLabel];
     [self.view addSubview:userNameField];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"SignUpBackgroundv2 2.png"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"SignUpBackGround.png"]];
 }
 
 -(void)resignKeyboards{
@@ -93,12 +109,62 @@
     [emailField resignFirstResponder];
 }
 
+-(void)selectImage{
+    NSLog(@"select image");
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIActionSheet *imageSheet = [[UIActionSheet alloc]initWithTitle:@"Pick an image source"
+                                                               delegate:self
+                                                      cancelButtonTitle:@"Cancel"
+                                                 destructiveButtonTitle:nil
+                                                      otherButtonTitles:@"Take a photo", @"Choose an existing photo", nil];
+        [imageSheet showInView:self.view];
+    }else{
+        UIActionSheet *imageSheet = [[UIActionSheet alloc]initWithTitle:@"Pick an image source"
+                                                               delegate:self
+                                                      cancelButtonTitle:@"Cancel"
+                                                 destructiveButtonTitle:nil
+                                                      otherButtonTitles:@"Choose an existing photo", nil];
+        [imageSheet showInView:self.view];
+    }
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
+    UIImagePickerController *picker = [[UIImagePickerController alloc]init];
+    picker.delegate = self;
+    if ([buttonTitle isEqualToString:@"Take a photo"]) {
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }else if ([buttonTitle isEqualToString:@"Choose an existing photo"]){
+        picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    }
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    UIImage *img = [info objectForKey:UIImagePickerControllerEditedImage];
+    if(!img) img = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    NSData *profilePictureData = [NSData dataWithData:UIImagePNGRepresentation(img)];
+    
+    self.profilePicture = [PFFile fileWithData:profilePictureData];
+    
+    profilePictureField.image = img;
+}
+
 -(void)createUser{
     NSLog(@"Sign up");
     
     self.email = [emailField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     self.username = [userNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     self.password = [passwordField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDAnimationFade;
+    hud.labelText = @"Signing up, please wait";
+    [hud show:YES];
     
     BOOL isValidEmail = NO;
     if(self.email){
@@ -114,6 +180,8 @@
                                                   cancelButtonTitle:nil
                                                   otherButtonTitles:@"OK", nil];
         [noUserName show];
+        
+        [hud hide:YES];
     }else if (self.password.length < 5){
         UIAlertView *noPassWord =[[UIAlertView alloc]initWithTitle:@"Oh no"
                                                            message:@"It appears your password is too small or isn't there"
@@ -121,6 +189,8 @@
                                                  cancelButtonTitle:nil
                                                  otherButtonTitles:@"OK", nil];
         [noPassWord show];
+        
+        [hud hide:YES];
     }else if (isValidEmail == YES){
         UIAlertView *invalidEmail = [[UIAlertView alloc]initWithTitle:@"Oh no"
                                                               message:@"It appears you have an invalid email"
@@ -128,25 +198,45 @@
                                                     cancelButtonTitle:nil
                                                     otherButtonTitles:@"OK", nil];
         [invalidEmail show];
+        
+        [hud hide:YES];
     }else{
+        signUp.hidden = YES;
+        
         PFUser *user = [PFUser user];
         user.username = self.username;
         user.password = self.password;
         user.email = self.email;
         
+        [user setObject:[NSString stringWithFormat:@"hello kai"] forKey:@"hello"];
+        
+        if (self.profilePicture) {
+            [user setObject:self.profilePicture forKey:profilePictureTitle];
+        }else{
+            UIImage *defaultProfileImage = [UIImage imageNamed:@"profile7.png"];
+            NSData *data = [NSData dataWithData:UIImagePNGRepresentation(defaultProfileImage)];
+            self.profilePicture = [PFFile fileWithData:data];
+            [user setObject:self.profilePicture forKey:profilePictureTitle];
+        }
+        
+        
         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if(error){
-                NSLog(@"OH NO AN ERROR SIGNING UP!!!");
+                NSLog(@"OH NO AN ERROR SIGNING UP!!! description: %@", [error description]);
                 UIAlertView *errorSigningUp = [[UIAlertView alloc]initWithTitle:@"An error occured"
-                                                                        message:@"an error occured while signing up your account :( please try again"
+                                                                        message:@"an error occured while signing up your account :( please try again, it might becuase you used a taken email, or taken username"
                                                                        delegate:nil
                                                               cancelButtonTitle:nil
                                                               otherButtonTitles:@"OK", nil];
                 [errorSigningUp show];
+                
+                [hud hide:YES];
             }else{
                 NSLog(@"Sign up successful");
-                NewsFeedViewController *homeViewCon = [[NewsFeedViewController alloc]init];
-                [self presentViewController:homeViewCon animated:YES completion:nil];
+                IntroViewController *introPage = [[IntroViewController alloc]init];
+                [self presentViewController:introPage animated:YES completion:nil];
+                
+                [hud hide:YES];
             }
         }];
     }

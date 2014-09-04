@@ -11,6 +11,7 @@
 #import "SignUpViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import <Parse/Parse.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface SignInViewController ()
 
@@ -67,7 +68,7 @@
     [self.view addSubview:passwordLabel];
     [self.view addSubview:userNameField];
     [self.view addSubview:userNameLabel];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"SignUpBackgroundv2 2.png"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"SignUpBackGround.png"]];
 }
 
 -(void)resignKeyboards{
@@ -77,6 +78,11 @@
 
 -(void)signIn{
     NSLog(@"sign in");
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDAnimationFade;
+    hud.labelText = @"Signing up, please wait";
+    [hud show:YES];
     
     self.username = [userNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     self.password = [passwordField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -88,6 +94,8 @@
                                                        cancelButtonTitle:nil
                                                        otherButtonTitles:@"OK", nil];
         [invalidUserName show];
+        
+        [hud hide:YES];
     }else if (self.password.length < 5){
         UIAlertView *invalidPassword = [[UIAlertView alloc]initWithTitle:@"Oh no"
                                                                  message:@"The password you entered is invalid"
@@ -95,6 +103,8 @@
                                                        cancelButtonTitle:nil
                                                        otherButtonTitles:@"OK", nil];
         [invalidPassword show];
+        
+        [hud hide:YES];
     }else{
         [PFUser logInWithUsernameInBackground:self.username password:self.password block:^(PFUser *user, NSError *error) {
             if (error) {
@@ -105,10 +115,14 @@
                                                           cancelButtonTitle:nil
                                                           otherButtonTitles:@"OK", nil];
                 [loginError show];
+                
+                [hud hide:YES];
             }else{
                 NSLog(@"Loging successful");
                 NewsFeedViewController *homeViewCon = [[NewsFeedViewController alloc]init];
                 [self presentViewController:homeViewCon animated:YES completion:nil];
+                
+                [hud hide:YES];
             }
         }];
     }

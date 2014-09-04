@@ -9,7 +9,11 @@
 #import "AppDelegate.h"
 #import "SignInViewController.h"
 #import "NewsFeedViewController.h"
+//#import "IntroViewController.h"
+#import "ProfileViewController.h"
+#import "FindFriendsViewController.h"
 #import <Parse/Parse.h>
+#import <RESideMenu/RESideMenu.h>
 
 @implementation AppDelegate
 
@@ -20,14 +24,22 @@
     [Parse setApplicationId:@"X3ZdLeraoNjySo0k7AdcNPAASrukyNpylFHXsAax"
                   clientKey:@"EaHUjTKDA4LNvF63Cz9eRQitl8b3YjZAZtjm02VA"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    SignInViewController *signUpViewController = [[SignInViewController alloc]init];
     NewsFeedViewController *homeViewCon = [[NewsFeedViewController alloc]init];
+    SignInViewController *signUpViewController = [[SignInViewController alloc]init];
+    ProfileViewController *profileViewCon = [[ProfileViewController alloc]init];
+    FindFriendsViewController *friendsViewCon = [[FindFriendsViewController alloc]init];
+    UITabBarController *tabBarCon = [[UITabBarController alloc]init];
+    tabBarCon.viewControllers = @[homeViewCon, friendsViewCon, profileViewCon];
+    [[UITabBar appearance] setBarTintColor:[UIColor clearColor]];
     
     if ([PFUser currentUser]) {
-        self.window.rootViewController = homeViewCon;
+        self.window.rootViewController = tabBarCon;
     }else{
         self.window.rootViewController = signUpViewController;
     }
+    
+//    IntroViewController *viewCon = [[IntroViewController alloc]init];
+//    self.window.rootViewController = viewCon;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
