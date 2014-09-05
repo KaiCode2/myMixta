@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewsFeedViewController : UIViewController
+@interface NewsFeedViewController : UICollectionViewController
 
 @end

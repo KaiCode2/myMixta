@@ -7,6 +7,7 @@
 //
 
 #import "FindFriendsViewController.h"
+#import "Constents.h"
 #import <Parse/Parse.h>
 #import <QuartzCore/QuartzCore.h>
 #import <MBProgressHUD/MBProgressHUD.h>
@@ -31,6 +32,10 @@
     self = [super initWithCollectionViewLayout:layout];
     if (self) {
         // Custom initialization
+        
+        UITabBarItem* tabbar = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"searching33.png"] tag:0];
+        [tabbar setImageInsets:UIEdgeInsetsMake(15, 15, 15, 15)];
+        self.tabBarItem = tabbar;
         
         CGFloat itemSpacing = 10.0;
         layout.minimumInteritemSpacing = itemSpacing;
@@ -92,7 +97,6 @@
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.collectionView animated:YES];
     hud.mode = MBProgressHUDAnimationFade;
     hud.labelText = @"Searching";
-    //NSLog(@"text field text is %@", findUserField.text);
     [query whereKey:@"username" containsString:findUserField.text];
     [query whereKeyExists:@"profilePicture"];
     
@@ -124,12 +128,6 @@
     }
 }
 
--(UITabBarItem*)tabBarItem{
-    UITabBarItem* tabbar = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"searching33.png"] tag:0];
-    [tabbar setImageInsets:UIEdgeInsetsMake(15, 15, 15, 15)];
-    return tabbar;
-}
-
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
 }
@@ -151,12 +149,10 @@
         if (error) {
             NSLog(@"error is %@", error.description);
         }else{
-            
             imageView.image = [FindFriendsViewController imageWithImage:[UIImage imageWithData:data] scaledToSize:CGSizeMake(40, 40)];
             [cell layoutSubviews];
         }
     }];
-//    NSData *data = [NSData dataWithContentsOfFile:file];
     for (UIView *myLabels in [cell subviews])
     {
         [myLabels removeFromSuperview];
@@ -165,7 +161,6 @@
     userNameLabel.text = (NSString*)self.users[indexPath.row][@"username"];
     userNameLabel.backgroundColor = [UIColor clearColor];
     userNameLabel.font = [UIFont fontWithName:@"Arial-BoldItalicMT" size:20];
-  //  [cell removeFromSuperview cel
     [cell addSubview:userNameLabel];
     [cell addSubview:imageView];
     cell.layer.cornerRadius = 7.5;
@@ -174,12 +169,30 @@
     cell.backgroundColor = [UIColor whiteColor];
     
     UIButton *followButton = [[UIButton alloc]initWithFrame:CGRectMake(cell.frame.size.width - 60, 10, 50, 50)];
-//    [followButton setImage:<#(UIImage *)#> forState:UIControlStateNormal];
-    followButton.backgroundColor = [UIColor blueColor];
+    [followButton setImage:[FindFriendsViewController imageWithImage:[UIImage imageNamed:@"add156.png"] scaledToSize:CGSizeMake(40, 40)] forState:UIControlStateNormal];
+    followButton.backgroundColor = [UIColor colorWithRed:0 green:0.1 blue:0.7 alpha:0.75];
+    [followButton addTarget:self action:@selector(follow:) forControlEvents:UIControlEventTouchUpInside];
+    followButton.layer.cornerRadius = 10;
+    followButton.layer.masksToBounds = YES;
     
     [cell addSubview:followButton];
     
     return cell;
+}
+
+-(void)follow:(id)sender{
+    NSLog(@"the sender is %@", sender);
+    sender = (UIButton*)sender;
+    
+    UICollectionViewCell *senderCell = (UICollectionViewCell*)[sender superview];
+    NSIndexPath *cellIndexPath = [self.collectionView indexPathForCell:senderCell];
+    
+    PFUser *receivingUser = self.users[cellIndexPath.row];
+    
+    PFObject *follow = [PFObject objectWithClassName:kFollowClass];
+    follow[kFollowSender] = [PFUser currentUser];
+    follow[kFollowReceiver] = receivingUser;
+    [follow saveInBackground];
 }
 
 + (UIImage*)imageWithImage:(UIImage*)image
@@ -192,16 +205,5 @@
     
     return newImage;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

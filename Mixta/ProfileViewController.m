@@ -7,6 +7,7 @@
 //
 
 #import "ProfileViewController.h"
+#import <Parse/Parse.h>
 
 @interface ProfileViewController ()
 
@@ -14,42 +15,27 @@
 
 @implementation ProfileViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super init];
     if (self) {
-        // Custom initialization
+        NSMutableAttributedString* attrStr = [[NSMutableAttributedString alloc]initWithString:[PFUser currentUser].username];
+        [attrStr addAttribute: NSForegroundColorAttributeName value: [UIColor colorWithRed:0 green:0 blue:8 alpha:0.6] range: NSMakeRange(0, [PFUser currentUser].username.length)];
+        [attrStr addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"SnellRoundhand-Black" size:38.0] range:NSMakeRange(0, [PFUser currentUser].username.length)];
+        
+        UILabel *titleLabel = [UILabel new];
+        titleLabel.attributedText = attrStr;
+        [titleLabel sizeToFit];
+        self.navigationItem.titleView = titleLabel;
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 -(UITabBarItem*)tabBarItem{
+    //TODO: move to init
     UITabBarItem* tabbar = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"user47.png"] tag:0];
     [tabbar setImageInsets:UIEdgeInsetsMake(15, 15, 15, 15)];
     return tabbar;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

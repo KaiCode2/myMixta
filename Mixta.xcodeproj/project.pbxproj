@@ -46,6 +46,9 @@
 		1270E65219B7CCB300F19302 /* searching33.png in Resources */ = {isa = PBXBuildFile; fileRef = 1270E64F19B7CCB300F19302 /* searching33.png */; };
 		1270E65319B7CCB300F19302 /* user47.png in Resources */ = {isa = PBXBuildFile; fileRef = 1270E65019B7CCB300F19302 /* user47.png */; };
 		1270E65719B7D4DB00F19302 /* SignUpBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = 1270E65619B7D4DB00F19302 /* SignUpBackGround.png */; };
+		1270E65919B8C3AA00F19302 /* add156.png in Resources */ = {isa = PBXBuildFile; fileRef = 1270E65819B8C3AA00F19302 /* add156.png */; };
+		1270E65C19B8F7A900F19302 /* Constents.m in Sources */ = {isa = PBXBuildFile; fileRef = 1270E65B19B8F7A900F19302 /* Constents.m */; };
+		1270E66019B9282900F19302 /* rounded25.png in Resources */ = {isa = PBXBuildFile; fileRef = 1270E65F19B9282900F19302 /* rounded25.png */; };
 		C08B6872E76748559B12D8DC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0889530C9C3458381C6259B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +114,10 @@
 		1270E64F19B7CCB300F19302 /* searching33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searching33.png; sourceTree = "<group>"; };
 		1270E65019B7CCB300F19302 /* user47.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user47.png; sourceTree = "<group>"; };
 		1270E65619B7D4DB00F19302 /* SignUpBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUpBackGround.png; sourceTree = "<group>"; };
+		1270E65819B8C3AA00F19302 /* add156.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add156.png; sourceTree = "<group>"; };
+		1270E65A19B8F7A900F19302 /* Constents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constents.h; sourceTree = "<group>"; };
+		1270E65B19B8F7A900F19302 /* Constents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constents.m; sourceTree = "<group>"; };
+		1270E65F19B9282900F19302 /* rounded25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rounded25.png; sourceTree = "<group>"; };
 		1E5DDF469D934893862BCE62 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E0889530C9C3458381C6259B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -256,14 +263,16 @@
 		1270E62E19B6720900F19302 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1270E63819B6811400F19302 /* Sign in adn sign up */,
+				1270E65A19B8F7A900F19302 /* Constents.h */,
+				1270E65B19B8F7A900F19302 /* Constents.m */,
+				1270E63819B6811400F19302 /* Sign in and sign up */,
 				1270E64A19B7C83D00F19302 /* social */,
 			);
 			name = Views;
 			path = ..;
 			sourceTree = "<group>";
 		};
-		1270E63819B6811400F19302 /* Sign in adn sign up */ = {
+		1270E63819B6811400F19302 /* Sign in and sign up */ = {
 			isa = PBXGroup;
 			children = (
 				1214145D19B6539100BD3F8E /* SignUpViewController.h */,
@@ -273,12 +282,14 @@
 				1270E63219B6723700F19302 /* SignInViewController.h */,
 				1270E63319B6723700F19302 /* SignInViewController.m */,
 			);
-			name = "Sign in adn sign up";
+			name = "Sign in and sign up";
 			sourceTree = "<group>";
 		};
 		1270E63D19B773CD00F19302 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				1270E65F19B9282900F19302 /* rounded25.png */,
+				1270E65819B8C3AA00F19302 /* add156.png */,
 				1270E64E19B7CCB300F19302 /* letter28.png */,
 				1270E64F19B7CCB300F19302 /* searching33.png */,
 				1270E65019B7CCB300F19302 /* user47.png */,
@@ -381,12 +392,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1270E66019B9282900F19302 /* rounded25.png in Resources */,
 				1270E65119B7CCB300F19302 /* letter28.png in Resources */,
 				1270E64619B79AE900F19302 /* introBackground1.png in Resources */,
 				1270E65319B7CCB300F19302 /* user47.png in Resources */,
 				1270E60319B64BE600F19302 /* InfoPlist.strings in Resources */,
 				1270E65219B7CCB300F19302 /* searching33.png in Resources */,
 				1270E60B19B64BE600F19302 /* Images.xcassets in Resources */,
+				1270E65919B8C3AA00F19302 /* add156.png in Resources */,
 				1270E63C19B773CA00F19302 /* profile7.png in Resources */,
 				1270E63A19B68A1400F19302 /* cameraIcon.png in Resources */,
 				1270E65719B7D4DB00F19302 /* SignUpBackGround.png in Resources */,
@@ -443,6 +456,7 @@
 			files = (
 				1270E63419B6723700F19302 /* SignInViewController.m in Sources */,
 				1270E64D19B7C8ED00F19302 /* FindFriendsViewController.m in Sources */,
+				1270E65C19B8F7A900F19302 /* Constents.m in Sources */,
 				1270E64019B7848300F19302 /* IntroViewController.m in Sources */,
 				1270E60919B64BE600F19302 /* AppDelegate.m in Sources */,
 				1270E60519B64BE600F19302 /* main.m in Sources */,

@@ -6,13 +6,14 @@
 //  Copyright (c) 2014 kai.don.aldag. All rights reserved.
 //
 
+#import "Constents.h"
 #import "SignUpViewController.h"
 #import "SignInViewController.h"
 #import "IntroViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 
-@interface SignUpViewController () <UIActionSheetDelegate, UIImagePickerControllerDelegate>
+@interface SignUpViewController () <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end
 
@@ -24,20 +25,10 @@
     
     UIButton *signUp;
     UIButton *signIn;
-    
-    NSString *profilePictureTitle;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIAlertView *welcomeAlert = [[UIAlertView alloc]initWithTitle:@"Welcome to Mixta"
-                                                          message:@"Welcome to Mixta please sign up for an account"
-                                                         delegate:self
-                                                cancelButtonTitle:nil
-                                                otherButtonTitles:@"OK", nil];
-    [welcomeAlert show];
-    
-    profilePictureTitle = @"profilePicture";
     
     UILabel *userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.view.center.x - 25, 50, 100, 50)];
     userNameLabel.backgroundColor = [UIColor clearColor];
@@ -208,17 +199,14 @@
         user.password = self.password;
         user.email = self.email;
         
-        [user setObject:[NSString stringWithFormat:@"hello kai"] forKey:@"hello"];
-        
         if (self.profilePicture) {
-            [user setObject:self.profilePicture forKey:profilePictureTitle];
+            [user setObject:self.profilePicture forKey:kProfilePictureKey];
         }else{
             UIImage *defaultProfileImage = [UIImage imageNamed:@"profile7.png"];
             NSData *data = [NSData dataWithData:UIImagePNGRepresentation(defaultProfileImage)];
             self.profilePicture = [PFFile fileWithData:data];
-            [user setObject:self.profilePicture forKey:profilePictureTitle];
+            [user setObject:self.profilePicture forKey:kProfilePictureKey];
         }
-        
         
         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if(error){
@@ -256,11 +244,6 @@
     NSLog(@"sign in");
     SignInViewController *signInCon = [[SignInViewController alloc]init];
     [self presentViewController:signInCon animated:YES completion:nil];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*
