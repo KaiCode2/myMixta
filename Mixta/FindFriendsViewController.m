@@ -8,6 +8,7 @@
 
 #import "FindFriendsViewController.h"
 #import "Constents.h"
+#import "UIImage+crop_image.h"
 #import <Parse/Parse.h>
 #import <QuartzCore/QuartzCore.h>
 #import <MBProgressHUD/MBProgressHUD.h>
@@ -94,9 +95,6 @@
 
 -(void)search{
     PFQuery *query = [PFUser query];
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.collectionView animated:YES];
-    hud.mode = MBProgressHUDAnimationFade;
-    hud.labelText = @"Searching";
     [query whereKey:@"username" containsString:findUserField.text];
     [query whereKeyExists:@"profilePicture"];
     
@@ -107,7 +105,6 @@
                                               cancelButtonTitle:nil
                                               otherButtonTitles:@"OK", nil];
         [noText show];
-        [hud hide:YES];
     }else{
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (error) {
@@ -117,12 +114,9 @@
                                                                  cancelButtonTitle:nil
                                                                  otherButtonTitles:@"OK", nil];
                 [errorFindingUsers show];
-                [hud hide:YES];
             }else{
                 [self.users addObjectsFromArray:objects];
-                NSLog(@"query successful and the first user is %@", objects[0]);
                 [self.collectionView reloadData];
-                [hud hide:YES];
             }
         }];
     }
@@ -141,7 +135,7 @@
     
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, cell.frame.size.height - 20, cell.frame.size.height - 20)];
     
-    PFFile *file = (PFFile*)self.users[indexPath.row][@"profilePicture"];
+    PFFile *file = (PFFile*)self.users[indexPath.row][kProfilePictureKey];
     
     NSLog(@"the file is %@", file.description);
     
@@ -149,10 +143,12 @@
         if (error) {
             NSLog(@"error is %@", error.description);
         }else{
-            imageView.image = [FindFriendsViewController imageWithImage:[UIImage imageWithData:data] scaledToSize:CGSizeMake(40, 40)];
+            imageView.image = [UIImage imageWithImage:[UIImage imageWithData:data] scaledToSize:CGSizeMake(40, 40)];
             [cell layoutSubviews];
         }
     }];
+    
+    //TODO: this is hacky as hell so change it ASAP
     for (UIView *myLabels in [cell subviews])
     {
         [myLabels removeFromSuperview];
@@ -169,7 +165,7 @@
     cell.backgroundColor = [UIColor whiteColor];
     
     UIButton *followButton = [[UIButton alloc]initWithFrame:CGRectMake(cell.frame.size.width - 60, 10, 50, 50)];
-    [followButton setImage:[FindFriendsViewController imageWithImage:[UIImage imageNamed:@"add156.png"] scaledToSize:CGSizeMake(40, 40)] forState:UIControlStateNormal];
+    [followButton setImage:[UIImage imageWithImage:[UIImage imageNamed:@"add156.png"] scaledToSize:CGSizeMake(40, 40)] forState:UIControlStateNormal];
     followButton.backgroundColor = [UIColor colorWithRed:0 green:0.1 blue:0.7 alpha:0.75];
     [followButton addTarget:self action:@selector(follow:) forControlEvents:UIControlEventTouchUpInside];
     followButton.layer.cornerRadius = 10;
@@ -195,15 +191,5 @@
     [follow saveInBackground];
 }
 
-+ (UIImage*)imageWithImage:(UIImage*)image
-              scaledToSize:(CGSize)newSize;
-{
-    UIGraphicsBeginImageContext( newSize );
-    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
-    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return newImage;
-}
 
 @end

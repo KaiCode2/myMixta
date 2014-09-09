@@ -51,7 +51,7 @@
     EAIntroView *introView = [[EAIntroView alloc]initWithFrame:self.view.bounds andPages:@[introPage, secoundPage]];
     introView.delegate = self;
     [introView showInView:self.view animateDuration:0];
-    [introView.skipButton addTarget:self action:@selector(skipSlides) forControlEvents:UIControlStateNormal];
+    [introView.skipButton addTarget:self action:@selector(skipSlides) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning

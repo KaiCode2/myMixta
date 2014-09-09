@@ -21,6 +21,7 @@
 		1214146719B6561700BD3F8E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1214145219B6532600BD3F8E /* StoreKit.framework */; };
 		1214146819B6561700BD3F8E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1214145319B6532600BD3F8E /* SystemConfiguration.framework */; };
 		1214146A19B6561800BD3F8E /* libSystem.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1214146919B6561800BD3F8E /* libSystem.dylib */; };
+		125EE0B919BE2D9200555B5F /* MusicSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125EE0B819BE2D9200555B5F /* MusicSearchViewController.m */; };
 		1270E5F919B64BE600F19302 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270E5F819B64BE600F19302 /* Foundation.framework */; };
 		1270E5FD19B64BE600F19302 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270E5FC19B64BE600F19302 /* UIKit.framework */; };
 		1270E60319B64BE600F19302 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1270E60119B64BE600F19302 /* InfoPlist.strings */; };
@@ -49,6 +50,8 @@
 		1270E65919B8C3AA00F19302 /* add156.png in Resources */ = {isa = PBXBuildFile; fileRef = 1270E65819B8C3AA00F19302 /* add156.png */; };
 		1270E65C19B8F7A900F19302 /* Constents.m in Sources */ = {isa = PBXBuildFile; fileRef = 1270E65B19B8F7A900F19302 /* Constents.m */; };
 		1270E66019B9282900F19302 /* rounded25.png in Resources */ = {isa = PBXBuildFile; fileRef = 1270E65F19B9282900F19302 /* rounded25.png */; };
+		1270E66219BA357C00F19302 /* cloud263.png in Resources */ = {isa = PBXBuildFile; fileRef = 1270E66119BA357C00F19302 /* cloud263.png */; };
+		1270E66519BA36C700F19302 /* UIImage+crop_image.m in Sources */ = {isa = PBXBuildFile; fileRef = 1270E66419BA36C700F19302 /* UIImage+crop_image.m */; };
 		C08B6872E76748559B12D8DC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0889530C9C3458381C6259B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +81,8 @@
 		1214145D19B6539100BD3F8E /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpViewController.h; path = Mixta/SignUpViewController.h; sourceTree = "<group>"; };
 		1214145E19B6539100BD3F8E /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = Mixta/SignUpViewController.m; sourceTree = "<group>"; };
 		1214146919B6561800BD3F8E /* libSystem.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSystem.dylib; path = usr/lib/libSystem.dylib; sourceTree = SDKROOT; };
+		125EE0B719BE2D9200555B5F /* MusicSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicSearchViewController.h; sourceTree = "<group>"; };
+		125EE0B819BE2D9200555B5F /* MusicSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicSearchViewController.m; sourceTree = "<group>"; };
 		1270E5F519B64BE600F19302 /* Mixta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mixta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1270E5F819B64BE600F19302 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1270E5FA19B64BE600F19302 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -118,6 +123,9 @@
 		1270E65A19B8F7A900F19302 /* Constents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constents.h; sourceTree = "<group>"; };
 		1270E65B19B8F7A900F19302 /* Constents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constents.m; sourceTree = "<group>"; };
 		1270E65F19B9282900F19302 /* rounded25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rounded25.png; sourceTree = "<group>"; };
+		1270E66119BA357C00F19302 /* cloud263.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud263.png; sourceTree = "<group>"; };
+		1270E66319BA36C700F19302 /* UIImage+crop_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+crop_image.h"; path = "../UIImage+crop_image.h"; sourceTree = "<group>"; };
+		1270E66419BA36C700F19302 /* UIImage+crop_image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+crop_image.m"; path = "../UIImage+crop_image.m"; sourceTree = "<group>"; };
 		1E5DDF469D934893862BCE62 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E0889530C9C3458381C6259B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -170,6 +178,15 @@
 			);
 			name = "parse-library-1.2.21";
 			path = "../parse-library-1.2.21";
+			sourceTree = "<group>";
+		};
+		125EE0BA19BE2D9900555B5F /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				125EE0B719BE2D9200555B5F /* MusicSearchViewController.h */,
+				125EE0B819BE2D9200555B5F /* MusicSearchViewController.m */,
+			);
+			name = Music;
 			sourceTree = "<group>";
 		};
 		1270E5EC19B64BE600F19302 = {
@@ -234,6 +251,8 @@
 		1270E5FF19B64BE600F19302 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1270E66319BA36C700F19302 /* UIImage+crop_image.h */,
+				1270E66419BA36C700F19302 /* UIImage+crop_image.m */,
 				1270E60019B64BE600F19302 /* Mixta-Info.plist */,
 				1270E60119B64BE600F19302 /* InfoPlist.strings */,
 				1270E60419B64BE600F19302 /* main.m */,
@@ -267,6 +286,7 @@
 				1270E65B19B8F7A900F19302 /* Constents.m */,
 				1270E63819B6811400F19302 /* Sign in and sign up */,
 				1270E64A19B7C83D00F19302 /* social */,
+				125EE0BA19BE2D9900555B5F /* Music */,
 			);
 			name = Views;
 			path = ..;
@@ -288,6 +308,7 @@
 		1270E63D19B773CD00F19302 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				1270E66119BA357C00F19302 /* cloud263.png */,
 				1270E65F19B9282900F19302 /* rounded25.png */,
 				1270E65819B8C3AA00F19302 /* add156.png */,
 				1270E64E19B7CCB300F19302 /* letter28.png */,
@@ -307,10 +328,10 @@
 			children = (
 				1270E63519B677B400F19302 /* NewsFeedViewController.h */,
 				1270E63619B677B400F19302 /* NewsFeedViewController.m */,
-				1270E64719B7C82C00F19302 /* ProfileViewController.h */,
-				1270E64819B7C82C00F19302 /* ProfileViewController.m */,
 				1270E64B19B7C8ED00F19302 /* FindFriendsViewController.h */,
 				1270E64C19B7C8ED00F19302 /* FindFriendsViewController.m */,
+				1270E64719B7C82C00F19302 /* ProfileViewController.h */,
+				1270E64819B7C82C00F19302 /* ProfileViewController.m */,
 			);
 			name = social;
 			sourceTree = "<group>";
@@ -397,6 +418,7 @@
 				1270E64619B79AE900F19302 /* introBackground1.png in Resources */,
 				1270E65319B7CCB300F19302 /* user47.png in Resources */,
 				1270E60319B64BE600F19302 /* InfoPlist.strings in Resources */,
+				1270E66219BA357C00F19302 /* cloud263.png in Resources */,
 				1270E65219B7CCB300F19302 /* searching33.png in Resources */,
 				1270E60B19B64BE600F19302 /* Images.xcassets in Resources */,
 				1270E65919B8C3AA00F19302 /* add156.png in Resources */,
@@ -461,8 +483,10 @@
 				1270E60919B64BE600F19302 /* AppDelegate.m in Sources */,
 				1270E60519B64BE600F19302 /* main.m in Sources */,
 				1270E64919B7C82C00F19302 /* ProfileViewController.m in Sources */,
+				1270E66519BA36C700F19302 /* UIImage+crop_image.m in Sources */,
 				1270E63719B677B400F19302 /* NewsFeedViewController.m in Sources */,
 				1214145F19B6539100BD3F8E /* SignUpViewController.m in Sources */,
+				125EE0B919BE2D9200555B5F /* MusicSearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

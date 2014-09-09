@@ -78,6 +78,7 @@
 
 -(void)signIn{
     NSLog(@"sign in");
+    signIn.userInteractionEnabled = NO;
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDAnimationFade;
@@ -96,6 +97,7 @@
         [invalidUserName show];
         
         [hud hide:YES];
+        signIn.userInteractionEnabled = YES;
     }else if (self.password.length < 5){
         UIAlertView *invalidPassword = [[UIAlertView alloc]initWithTitle:@"Oh no"
                                                                  message:@"The password you entered is invalid"
@@ -105,6 +107,7 @@
         [invalidPassword show];
         
         [hud hide:YES];
+        signIn.userInteractionEnabled = YES;
     }else{
         [PFUser logInWithUsernameInBackground:self.username password:self.password block:^(PFUser *user, NSError *error) {
             if (error) {
@@ -117,12 +120,14 @@
                 [loginError show];
                 
                 [hud hide:YES];
+                signIn.userInteractionEnabled = YES;
             }else{
                 NSLog(@"Loging successful");
                 NewsFeedViewController *homeViewCon = [[NewsFeedViewController alloc]init];
                 [self presentViewController:homeViewCon animated:YES completion:nil];
                 
                 [hud hide:YES];
+                signIn.userInteractionEnabled = YES;
             }
         }];
     }

@@ -4,12 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-CocoaSoundCloudAPI.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-EAIntroView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-NXOAuth2Client.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>40C2413E10374F40B2756DC5</key>
+		<key>081CD6E1B23A42E9B210511D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>499B3A3716A74AF79875C294</key>
+		<key>158376A43D09434DA4DD1255</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A0EB0AF1DB0941F0BFBF90FE</key>
+		<key>1FC613CBF8CB4B6A808112F7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E3E562FD834B4D6AA33C0C69</key>
+		<key>450EFA663BC549748E3BC2AA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7856366D2C774A7BAED4034E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE57772F8F264482B6A67B71</key>
 		<dict>
 			<key>primary</key>
 			<true/>

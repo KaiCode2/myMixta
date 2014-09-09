@@ -199,6 +199,26 @@
         user.password = self.password;
         user.email = self.email;
         
+        NSURLRequest *eightTracksRequest = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:@"api_key=2ebc152a9e89f9a8f12316380e8f866138aeb4e8"]];
+        
+        [NSURLConnection sendAsynchronousRequest:eightTracksRequest
+                                           queue:[NSOperationQueue mainQueue]
+                               completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                                   if (connectionError) {
+                                       NSLog(@"error signing up 8 tracks token");
+                                   }else{
+                                       NSLog(@"we got a play token");
+                                       NSDictionary *JSONDict = [NSJSONSerialization JSONObjectWithData:data
+                                                                                       options:0
+                                                                                         error:nil];
+                                       NSLog(@"the available keys are: %@", [JSONDict allKeys]);
+                                       
+                                       NSString *token = [JSONDict objectForKey:@"play_token"];
+                                       
+                                       [user setObject:token forKey:kEightTrackToken];
+                                   }
+                               }];
+        
         if (self.profilePicture) {
             [user setObject:self.profilePicture forKey:kProfilePictureKey];
         }else{
@@ -207,7 +227,6 @@
             self.profilePicture = [PFFile fileWithData:data];
             [user setObject:self.profilePicture forKey:kProfilePictureKey];
         }
-        
         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if(error){
                 NSLog(@"OH NO AN ERROR SIGNING UP!!! description: %@", [error description]);

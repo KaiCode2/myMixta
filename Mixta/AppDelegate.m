@@ -14,6 +14,8 @@
 #import <Parse/Parse.h>
 #import <RESideMenu/RESideMenu.h>
 
+#import "MusicSearchViewController.h"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -40,6 +42,8 @@
     }else{
         self.window.rootViewController = signUpViewController;
     }
+//    MusicSearchViewController *viewCon = [[MusicSearchViewController alloc]init];
+//    self.window.rootViewController = viewCon;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
