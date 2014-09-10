@@ -22,6 +22,7 @@
 		1214146819B6561700BD3F8E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1214145319B6532600BD3F8E /* SystemConfiguration.framework */; };
 		1214146A19B6561800BD3F8E /* libSystem.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1214146919B6561800BD3F8E /* libSystem.dylib */; };
 		125EE0B919BE2D9200555B5F /* MusicSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125EE0B819BE2D9200555B5F /* MusicSearchViewController.m */; };
+		125EE0BC19BFB4E500555B5F /* searcgBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 125EE0BB19BFB4E500555B5F /* searcgBackground.png */; };
 		1270E5F919B64BE600F19302 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270E5F819B64BE600F19302 /* Foundation.framework */; };
 		1270E5FD19B64BE600F19302 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270E5FC19B64BE600F19302 /* UIKit.framework */; };
 		1270E60319B64BE600F19302 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1270E60119B64BE600F19302 /* InfoPlist.strings */; };
@@ -83,6 +84,7 @@
 		1214146919B6561800BD3F8E /* libSystem.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSystem.dylib; path = usr/lib/libSystem.dylib; sourceTree = SDKROOT; };
 		125EE0B719BE2D9200555B5F /* MusicSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicSearchViewController.h; sourceTree = "<group>"; };
 		125EE0B819BE2D9200555B5F /* MusicSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicSearchViewController.m; sourceTree = "<group>"; };
+		125EE0BB19BFB4E500555B5F /* searcgBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searcgBackground.png; sourceTree = "<group>"; };
 		1270E5F519B64BE600F19302 /* Mixta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mixta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1270E5F819B64BE600F19302 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1270E5FA19B64BE600F19302 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -285,7 +287,7 @@
 				1270E65A19B8F7A900F19302 /* Constents.h */,
 				1270E65B19B8F7A900F19302 /* Constents.m */,
 				1270E63819B6811400F19302 /* Sign in and sign up */,
-				1270E64A19B7C83D00F19302 /* social */,
+				1270E64A19B7C83D00F19302 /* Social */,
 				125EE0BA19BE2D9900555B5F /* Music */,
 			);
 			name = Views;
@@ -308,6 +310,7 @@
 		1270E63D19B773CD00F19302 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				125EE0BB19BFB4E500555B5F /* searcgBackground.png */,
 				1270E66119BA357C00F19302 /* cloud263.png */,
 				1270E65F19B9282900F19302 /* rounded25.png */,
 				1270E65819B8C3AA00F19302 /* add156.png */,
@@ -323,7 +326,7 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		1270E64A19B7C83D00F19302 /* social */ = {
+		1270E64A19B7C83D00F19302 /* Social */ = {
 			isa = PBXGroup;
 			children = (
 				1270E63519B677B400F19302 /* NewsFeedViewController.h */,
@@ -333,7 +336,7 @@
 				1270E64719B7C82C00F19302 /* ProfileViewController.h */,
 				1270E64819B7C82C00F19302 /* ProfileViewController.m */,
 			);
-			name = social;
+			name = Social;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,6 +426,7 @@
 				1270E60B19B64BE600F19302 /* Images.xcassets in Resources */,
 				1270E65919B8C3AA00F19302 /* add156.png in Resources */,
 				1270E63C19B773CA00F19302 /* profile7.png in Resources */,
+				125EE0BC19BFB4E500555B5F /* searcgBackground.png in Resources */,
 				1270E63A19B68A1400F19302 /* cameraIcon.png in Resources */,
 				1270E65719B7D4DB00F19302 /* SignUpBackGround.png in Resources */,
 			);

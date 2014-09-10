@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MusicSearchViewController : UIViewController
+@interface MusicSearchViewController : UICollectionViewController
 
 @end

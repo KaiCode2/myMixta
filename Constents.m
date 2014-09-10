@@ -12,7 +12,7 @@ NSString *const kProfilePictureKey = @"profilePicture";
 
 NSString *const kUserName = @"username";
 
-NSString *const kEightTrackToken = @"eightTracksToken";
+NSString *const kEightTrackToken = @"eightTracksToken"; 
 
 //class
 NSString *const kTextClass = @"TextPost";

@@ -12,7 +12,7 @@
 
 extern NSString *const kProfilePictureKey;
 
-extern NSString *const kEightTrackToken
+extern NSString *const kEightTrackToken;
 
 extern NSString *const kUserName;
 

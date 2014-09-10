@@ -199,13 +199,13 @@
         user.password = self.password;
         user.email = self.email;
         
-        NSURLRequest *eightTracksRequest = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:@"api_key=2ebc152a9e89f9a8f12316380e8f866138aeb4e8"]];
+        NSURLRequest *eightTracksRequest = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:@"http://8tracks.com/sets/new.json?api_key=2ebc152a9e89f9a8f12316380e8f866138aeb4e8"]];
         
         [NSURLConnection sendAsynchronousRequest:eightTracksRequest
                                            queue:[NSOperationQueue mainQueue]
                                completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
                                    if (connectionError) {
-                                       NSLog(@"error signing up 8 tracks token");
+                                       NSLog(@"error signing up 8 tracks token with connectionError: %@", connectionError.description);
                                    }else{
                                        NSLog(@"we got a play token");
                                        NSDictionary *JSONDict = [NSJSONSerialization JSONObjectWithData:data
@@ -215,7 +215,17 @@
                                        
                                        NSString *token = [JSONDict objectForKey:@"play_token"];
                                        
+                                       NSLog(@"the token is %@", token);
+                                       
                                        [user setObject:token forKey:kEightTrackToken];
+                                       
+                                       [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                                           if (error) {
+                                               NSLog(@"error occured while saving token to parse");
+                                           }else{
+                                               NSLog(@"Whahoo the token saved to parse");
+                                           }
+                                       }];
                                    }
                                }];
         

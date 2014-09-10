@@ -37,13 +37,13 @@
     self.tabCon.viewControllers = @[newsNavCon, friendsNavCon, profileNavCon];
     [[UITabBar appearance] setBarTintColor:[UIColor blackColor]];
     
-    if ([PFUser currentUser]) {
-        self.window.rootViewController = self.tabCon;
-    }else{
-        self.window.rootViewController = signUpViewController;
-    }
-//    MusicSearchViewController *viewCon = [[MusicSearchViewController alloc]init];
-//    self.window.rootViewController = viewCon;
+//    if ([PFUser currentUser]) {
+//        self.window.rootViewController = self.tabCon;
+//    }else{
+//        self.window.rootViewController = signUpViewController;
+//    }
+    MusicSearchViewController *viewCon = [[MusicSearchViewController alloc]init];
+    self.window.rootViewController = viewCon;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
