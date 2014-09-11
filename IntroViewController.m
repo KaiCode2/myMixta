@@ -8,6 +8,8 @@
 
 #import "IntroViewController.h"
 #import "NewsFeedViewController.h"
+#include "TabBarViewController.h"
+#import "AppDelegate.h"
 #import <EAIntroView/EAIntroView.h>
 #import <Parse/Parse.h>
 
@@ -61,7 +63,7 @@
 }
 
 -(void)skipSlides{
-    NewsFeedViewController *viewCon = [[NewsFeedViewController alloc]init];
+    TabBarViewController *viewCon = [[TabBarViewController alloc]init];
     [self presentViewController:viewCon animated:YES completion:nil];
 }
 

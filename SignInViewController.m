@@ -7,7 +7,7 @@
 //
 
 #import "SignInViewController.h"
-#import "NewsFeedViewController.h"
+#import "TabBarViewController.h"
 #import "SignUpViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import <Parse/Parse.h>
@@ -123,7 +123,7 @@
                 signIn.userInteractionEnabled = YES;
             }else{
                 NSLog(@"Loging successful");
-                NewsFeedViewController *homeViewCon = [[NewsFeedViewController alloc]init];
+                TabBarViewController *homeViewCon = [[TabBarViewController alloc]init];
                 [self presentViewController:homeViewCon animated:YES completion:nil];
                 
                 [hud hide:YES];

@@ -8,13 +8,11 @@
 
 #import "AppDelegate.h"
 #import "SignInViewController.h"
-#import "NewsFeedViewController.h"
-#import "ProfileViewController.h"
-#import "FindFriendsViewController.h"
+#import "TabBarViewController.h"
 #import <Parse/Parse.h>
 #import <RESideMenu/RESideMenu.h>
 
-#import "MusicSearchViewController.h"
+
 
 @implementation AppDelegate
 
@@ -25,25 +23,15 @@
     [Parse setApplicationId:@"X3ZdLeraoNjySo0k7AdcNPAASrukyNpylFHXsAax"
                   clientKey:@"EaHUjTKDA4LNvF63Cz9eRQitl8b3YjZAZtjm02VA"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    NewsFeedViewController *homeViewCon = [[NewsFeedViewController alloc]init];
     SignInViewController *signUpViewController = [[SignInViewController alloc]init];
-    ProfileViewController *profileViewCon = [[ProfileViewController alloc]init];
-    FindFriendsViewController *friendsViewCon = [[FindFriendsViewController alloc]init];
-    UINavigationController *newsNavCon = [[UINavigationController alloc]initWithRootViewController:homeViewCon];
-    UINavigationController *profileNavCon = [[UINavigationController alloc]initWithRootViewController:profileViewCon];
-    UINavigationController *friendsNavCon = [[UINavigationController alloc]initWithRootViewController:friendsViewCon];
+    TabBarViewController *tabCon = [[TabBarViewController alloc]init];
     
-    self.tabCon = [[UITabBarController alloc]init];
-    self.tabCon.viewControllers = @[newsNavCon, friendsNavCon, profileNavCon];
-    [[UITabBar appearance] setBarTintColor:[UIColor blackColor]];
-    
-//    if ([PFUser currentUser]) {
-//        self.window.rootViewController = self.tabCon;
-//    }else{
-//        self.window.rootViewController = signUpViewController;
-//    }
-    MusicSearchViewController *viewCon = [[MusicSearchViewController alloc]init];
-    self.window.rootViewController = viewCon;
+    if ([PFUser currentUser]) {
+        self.window.rootViewController = tabCon;
+    }else{
+        self.window.rootViewController = signUpViewController;
+    }
+//    self.window.rootViewController = viewCon;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

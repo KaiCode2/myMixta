@@ -11,7 +11,6 @@
 #import "UIImage+crop_image.h"
 #import <Parse/Parse.h>
 #import <QuartzCore/QuartzCore.h>
-#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface FindFriendsViewController ()  <UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -95,8 +94,8 @@
 
 -(void)search{
     PFQuery *query = [PFUser query];
-    [query whereKey:@"username" containsString:findUserField.text];
-    [query whereKeyExists:@"profilePicture"];
+    [query whereKey:kUserName containsString:findUserField.text];
+    [query whereKeyExists:kProfilePictureKey];
     
     if (findUserField.text.length == 0) {
         UIAlertView *noText = [[UIAlertView alloc]initWithTitle:@"Oh no"

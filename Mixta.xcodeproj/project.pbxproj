@@ -23,6 +23,10 @@
 		1214146A19B6561800BD3F8E /* libSystem.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1214146919B6561800BD3F8E /* libSystem.dylib */; };
 		125EE0B919BE2D9200555B5F /* MusicSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125EE0B819BE2D9200555B5F /* MusicSearchViewController.m */; };
 		125EE0BC19BFB4E500555B5F /* searcgBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 125EE0BB19BFB4E500555B5F /* searcgBackground.png */; };
+		125EE0C219C0DB1100555B5F /* play15.png in Resources */ = {isa = PBXBuildFile; fileRef = 125EE0C019C0DB1100555B5F /* play15.png */; };
+		125EE0C319C0DB1100555B5F /* share10.png in Resources */ = {isa = PBXBuildFile; fileRef = 125EE0C119C0DB1100555B5F /* share10.png */; };
+		125EE0C519C0F2D200555B5F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 125EE0C419C0F2D200555B5F /* AVFoundation.framework */; };
+		125EE10B19C119E600555B5F /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125EE10A19C119E600555B5F /* TabBarViewController.m */; };
 		1270E5F919B64BE600F19302 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270E5F819B64BE600F19302 /* Foundation.framework */; };
 		1270E5FD19B64BE600F19302 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270E5FC19B64BE600F19302 /* UIKit.framework */; };
 		1270E60319B64BE600F19302 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1270E60119B64BE600F19302 /* InfoPlist.strings */; };
@@ -85,6 +89,11 @@
 		125EE0B719BE2D9200555B5F /* MusicSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicSearchViewController.h; sourceTree = "<group>"; };
 		125EE0B819BE2D9200555B5F /* MusicSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicSearchViewController.m; sourceTree = "<group>"; };
 		125EE0BB19BFB4E500555B5F /* searcgBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searcgBackground.png; sourceTree = "<group>"; };
+		125EE0C019C0DB1100555B5F /* play15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play15.png; sourceTree = "<group>"; };
+		125EE0C119C0DB1100555B5F /* share10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share10.png; sourceTree = "<group>"; };
+		125EE0C419C0F2D200555B5F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		125EE10919C119E600555B5F /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		125EE10A19C119E600555B5F /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		1270E5F519B64BE600F19302 /* Mixta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mixta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1270E5F819B64BE600F19302 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1270E5FA19B64BE600F19302 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,8 +131,8 @@
 		1270E65019B7CCB300F19302 /* user47.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user47.png; sourceTree = "<group>"; };
 		1270E65619B7D4DB00F19302 /* SignUpBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUpBackGround.png; sourceTree = "<group>"; };
 		1270E65819B8C3AA00F19302 /* add156.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add156.png; sourceTree = "<group>"; };
-		1270E65A19B8F7A900F19302 /* Constents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constents.h; sourceTree = "<group>"; };
-		1270E65B19B8F7A900F19302 /* Constents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constents.m; sourceTree = "<group>"; };
+		1270E65A19B8F7A900F19302 /* Constents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constents.h; path = ../Constents.h; sourceTree = "<group>"; };
+		1270E65B19B8F7A900F19302 /* Constents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constents.m; path = ../Constents.m; sourceTree = "<group>"; };
 		1270E65F19B9282900F19302 /* rounded25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rounded25.png; sourceTree = "<group>"; };
 		1270E66119BA357C00F19302 /* cloud263.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud263.png; sourceTree = "<group>"; };
 		1270E66319BA36C700F19302 /* UIImage+crop_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+crop_image.h"; path = "../UIImage+crop_image.h"; sourceTree = "<group>"; };
@@ -137,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				125EE0C519C0F2D200555B5F /* AVFoundation.framework in Frameworks */,
 				1270E64419B78FDC00F19302 /* Accounts.framework in Frameworks */,
 				1270E64219B78F0000F19302 /* Social.framework in Frameworks */,
 				1214146A19B6561800BD3F8E /* libSystem.dylib in Frameworks */,
@@ -191,6 +201,15 @@
 			name = Music;
 			sourceTree = "<group>";
 		};
+		125EE0BF19C0DB1100555B5F /* png 3 */ = {
+			isa = PBXGroup;
+			children = (
+				125EE0C019C0DB1100555B5F /* play15.png */,
+				125EE0C119C0DB1100555B5F /* share10.png */,
+			);
+			path = "png 3";
+			sourceTree = "<group>";
+		};
 		1270E5EC19B64BE600F19302 = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +234,7 @@
 		1270E5F719B64BE600F19302 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				125EE0C419C0F2D200555B5F /* AVFoundation.framework */,
 				1270E64319B78FDC00F19302 /* Accounts.framework */,
 				1270E64119B78EFF00F19302 /* Social.framework */,
 				1214146919B6561800BD3F8E /* libSystem.dylib */,
@@ -242,6 +262,8 @@
 			children = (
 				1270E60719B64BE600F19302 /* AppDelegate.h */,
 				1270E60819B64BE600F19302 /* AppDelegate.m */,
+				1270E65A19B8F7A900F19302 /* Constents.h */,
+				1270E65B19B8F7A900F19302 /* Constents.m */,
 				1270E62E19B6720900F19302 /* Views */,
 				1270E60A19B64BE600F19302 /* Images.xcassets */,
 				1270E63D19B773CD00F19302 /* images */,
@@ -284,8 +306,8 @@
 		1270E62E19B6720900F19302 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1270E65A19B8F7A900F19302 /* Constents.h */,
-				1270E65B19B8F7A900F19302 /* Constents.m */,
+				125EE10919C119E600555B5F /* TabBarViewController.h */,
+				125EE10A19C119E600555B5F /* TabBarViewController.m */,
 				1270E63819B6811400F19302 /* Sign in and sign up */,
 				1270E64A19B7C83D00F19302 /* Social */,
 				125EE0BA19BE2D9900555B5F /* Music */,
@@ -310,6 +332,7 @@
 		1270E63D19B773CD00F19302 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				125EE0BF19C0DB1100555B5F /* png 3 */,
 				125EE0BB19BFB4E500555B5F /* searcgBackground.png */,
 				1270E66119BA357C00F19302 /* cloud263.png */,
 				1270E65F19B9282900F19302 /* rounded25.png */,
@@ -429,6 +452,8 @@
 				125EE0BC19BFB4E500555B5F /* searcgBackground.png in Resources */,
 				1270E63A19B68A1400F19302 /* cameraIcon.png in Resources */,
 				1270E65719B7D4DB00F19302 /* SignUpBackGround.png in Resources */,
+				125EE0C319C0DB1100555B5F /* share10.png in Resources */,
+				125EE0C219C0DB1100555B5F /* play15.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +509,7 @@
 				1270E64D19B7C8ED00F19302 /* FindFriendsViewController.m in Sources */,
 				1270E65C19B8F7A900F19302 /* Constents.m in Sources */,
 				1270E64019B7848300F19302 /* IntroViewController.m in Sources */,
+				125EE10B19C119E600555B5F /* TabBarViewController.m in Sources */,
 				1270E60919B64BE600F19302 /* AppDelegate.m in Sources */,
 				1270E60519B64BE600F19302 /* main.m in Sources */,
 				1270E64919B7C82C00F19302 /* ProfileViewController.m in Sources */,

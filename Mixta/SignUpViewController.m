@@ -127,22 +127,28 @@
         picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     }else if ([buttonTitle isEqualToString:@"Choose an existing photo"]){
         picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    }else{
+        [actionSheet resignFirstResponder];
+        return;
     }
     [self presentViewController:picker animated:YES completion:nil];
 }
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-    [self dismissViewControllerAnimated:YES completion:nil];
     
     UIImage *img = [info objectForKey:UIImagePickerControllerEditedImage];
     if(!img) img = [info objectForKey:UIImagePickerControllerOriginalImage];
     
-    NSData *profilePictureData = [NSData dataWithData:UIImagePNGRepresentation(img)];
+    NSData *profilePictureData = [NSData dataWithData:UIImageJPEGRepresentation(img, 1.0f)];
     
     self.profilePicture = [PFFile fileWithData:profilePictureData];
     
     profilePictureField.image = img;
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
 
 -(void)createUser{
     NSLog(@"Sign up");
