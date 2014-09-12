@@ -33,6 +33,15 @@
     if (self) {
         // Custom initialization
         
+        NSMutableAttributedString* attrStr = [[NSMutableAttributedString alloc]initWithString: @"Find friends"];
+        [attrStr addAttribute: NSForegroundColorAttributeName value: [UIColor colorWithRed:0 green:0 blue:8 alpha:0.6] range: NSMakeRange(0, 12)];
+        [attrStr addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"SnellRoundhand-Black" size:38.0] range:NSMakeRange(0, 12)];
+        
+        UILabel *titleLabel = [UILabel new];
+        titleLabel.attributedText = attrStr;
+        [titleLabel sizeToFit];
+        self.navigationItem.titleView = titleLabel;
+        
         UITabBarItem* tabbar = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"searching33.png"] tag:0];
         [tabbar setImageInsets:UIEdgeInsetsMake(15, 15, 15, 15)];
         self.tabBarItem = tabbar;

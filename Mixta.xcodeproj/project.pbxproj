@@ -27,6 +27,8 @@
 		125EE0C319C0DB1100555B5F /* share10.png in Resources */ = {isa = PBXBuildFile; fileRef = 125EE0C119C0DB1100555B5F /* share10.png */; };
 		125EE0C519C0F2D200555B5F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 125EE0C419C0F2D200555B5F /* AVFoundation.framework */; };
 		125EE10B19C119E600555B5F /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125EE10A19C119E600555B5F /* TabBarViewController.m */; };
+		125EE10D19C11F9E00555B5F /* audio.png in Resources */ = {isa = PBXBuildFile; fileRef = 125EE10C19C11F9E00555B5F /* audio.png */; };
+		125EE10F19C21CFC00555B5F /* PKImageBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 125EE10E19C21CFC00555B5F /* PKImageBundle.bundle */; };
 		1270E5F919B64BE600F19302 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270E5F819B64BE600F19302 /* Foundation.framework */; };
 		1270E5FD19B64BE600F19302 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1270E5FC19B64BE600F19302 /* UIKit.framework */; };
 		1270E60319B64BE600F19302 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1270E60119B64BE600F19302 /* InfoPlist.strings */; };
@@ -94,6 +96,8 @@
 		125EE0C419C0F2D200555B5F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		125EE10919C119E600555B5F /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		125EE10A19C119E600555B5F /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		125EE10C19C11F9E00555B5F /* audio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = audio.png; path = ../../../Downloads/audio.png; sourceTree = "<group>"; };
+		125EE10E19C21CFC00555B5F /* PKImageBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PKImageBundle.bundle; sourceTree = "<group>"; };
 		1270E5F519B64BE600F19302 /* Mixta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mixta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1270E5F819B64BE600F19302 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1270E5FA19B64BE600F19302 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -210,6 +214,14 @@
 			path = "png 3";
 			sourceTree = "<group>";
 		};
+		125EE11319C23E9E00555B5F /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = models;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		1270E5EC19B64BE600F19302 = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +276,7 @@
 				1270E60819B64BE600F19302 /* AppDelegate.m */,
 				1270E65A19B8F7A900F19302 /* Constents.h */,
 				1270E65B19B8F7A900F19302 /* Constents.m */,
+				125EE11319C23E9E00555B5F /* models */,
 				1270E62E19B6720900F19302 /* Views */,
 				1270E60A19B64BE600F19302 /* Images.xcassets */,
 				1270E63D19B773CD00F19302 /* images */,
@@ -275,6 +288,7 @@
 		1270E5FF19B64BE600F19302 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				125EE10E19C21CFC00555B5F /* PKImageBundle.bundle */,
 				1270E66319BA36C700F19302 /* UIImage+crop_image.h */,
 				1270E66419BA36C700F19302 /* UIImage+crop_image.m */,
 				1270E60019B64BE600F19302 /* Mixta-Info.plist */,
@@ -332,6 +346,7 @@
 		1270E63D19B773CD00F19302 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				125EE10C19C11F9E00555B5F /* audio.png */,
 				125EE0BF19C0DB1100555B5F /* png 3 */,
 				125EE0BB19BFB4E500555B5F /* searcgBackground.png */,
 				1270E66119BA357C00F19302 /* cloud263.png */,
@@ -440,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1270E66019B9282900F19302 /* rounded25.png in Resources */,
+				125EE10F19C21CFC00555B5F /* PKImageBundle.bundle in Resources */,
 				1270E65119B7CCB300F19302 /* letter28.png in Resources */,
 				1270E64619B79AE900F19302 /* introBackground1.png in Resources */,
 				1270E65319B7CCB300F19302 /* user47.png in Resources */,
@@ -453,6 +469,7 @@
 				1270E63A19B68A1400F19302 /* cameraIcon.png in Resources */,
 				1270E65719B7D4DB00F19302 /* SignUpBackGround.png in Resources */,
 				125EE0C319C0DB1100555B5F /* share10.png in Resources */,
+				125EE10D19C11F9E00555B5F /* audio.png in Resources */,
 				125EE0C219C0DB1100555B5F /* play15.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

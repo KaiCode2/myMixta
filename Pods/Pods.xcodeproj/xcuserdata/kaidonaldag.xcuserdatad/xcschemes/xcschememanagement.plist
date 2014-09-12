@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-BPForms.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-CocoaSoundCloudAPI.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -14,7 +19,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-JVFloatLabeledTextField.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -24,7 +39,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-PKImagePicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-RESideMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ReactiveCocoa.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,32 +62,57 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>081CD6E1B23A42E9B210511D</key>
+		<key>12202C161F30472087E995A9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>158376A43D09434DA4DD1255</key>
+		<key>199C515E258046148188D632</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1FC613CBF8CB4B6A808112F7</key>
+		<key>246975CCB6034FEBAD801FE4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>450EFA663BC549748E3BC2AA</key>
+		<key>48D94368D546410ABDC6E378</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7856366D2C774A7BAED4034E</key>
+		<key>625542E2E7574AA99EE6A415</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FE57772F8F264482B6A67B71</key>
+		<key>7AC8D231BB224FBB8CD4BAEF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>83B2DFDC85B44461A5AB70DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9A9F4B885A4142BA9DB8DF50</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CEC6416E63E148FDB060EF1A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CF8D5565AF284D279694A983</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F682DDA36B694C229FBC8279</key>
 		<dict>
 			<key>primary</key>
 			<true/>

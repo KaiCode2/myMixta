@@ -10,10 +10,11 @@
 #import "SignUpViewController.h"
 #import "SignInViewController.h"
 #import "IntroViewController.h"
+#import "PKImagePickerViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 
-@interface SignUpViewController () <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface SignUpViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, PKImagePickerViewControllerDelegate>
 
 @end
 
@@ -59,6 +60,7 @@
     emailField.textAlignment = NSTextAlignmentCenter;
     emailField.layer.cornerRadius = 10;
     emailField.layer.masksToBounds = YES;
+    [emailField setKeyboardType:UIKeyboardTypeEmailAddress];
     emailField.autocorrectionType = UITextAutocorrectionTypeNo;
     
     profilePictureField = [[UIImageView alloc]initWithFrame:CGRectMake(self.view.center.x - 50, 350, 100, 100)];
@@ -103,35 +105,26 @@
 -(void)selectImage{
     NSLog(@"select image");
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        UIActionSheet *imageSheet = [[UIActionSheet alloc]initWithTitle:@"Pick an image source"
-                                                               delegate:self
-                                                      cancelButtonTitle:@"Cancel"
-                                                 destructiveButtonTitle:nil
-                                                      otherButtonTitles:@"Take a photo", @"Choose an existing photo", nil];
-        [imageSheet showInView:self.view];
+        PKImagePickerViewController *imagePicker = [[PKImagePickerViewController alloc]init];
+        imagePicker.delegate = self;
+        [self presentViewController:imagePicker animated:YES completion:nil];
     }else{
-        UIActionSheet *imageSheet = [[UIActionSheet alloc]initWithTitle:@"Pick an image source"
-                                                               delegate:self
-                                                      cancelButtonTitle:@"Cancel"
-                                                 destructiveButtonTitle:nil
-                                                      otherButtonTitles:@"Choose an existing photo", nil];
-        [imageSheet showInView:self.view];
+        UIImagePickerController *picker = [[UIImagePickerController alloc]init];
+        [picker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        [self presentViewController:picker animated:YES completion:nil];
     }
 }
 
--(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
-    UIImagePickerController *picker = [[UIImagePickerController alloc]init];
-    picker.delegate = self;
-    if ([buttonTitle isEqualToString:@"Take a photo"]) {
-        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    }else if ([buttonTitle isEqualToString:@"Choose an existing photo"]){
-        picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-    }else{
-        [actionSheet resignFirstResponder];
-        return;
-    }
-    [self presentViewController:picker animated:YES completion:nil];
+-(void)imageSelectionCancelled{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)imageSelected:(UIImage *)img{
+    NSData *profilePictureData = [NSData dataWithData:UIImageJPEGRepresentation(img, 1.0f)];
+    
+    self.profilePicture = [PFFile fileWithData:profilePictureData];
+    
+    profilePictureField.image = img;
 }
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
@@ -143,9 +136,7 @@
     
     self.profilePicture = [PFFile fileWithData:profilePictureData];
     
-    profilePictureField.image = img;
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
+    profilePictureField.image = img;    
 }
 
 

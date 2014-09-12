@@ -11,7 +11,7 @@
 #import "TabBarViewController.h"
 #import <Parse/Parse.h>
 #import <RESideMenu/RESideMenu.h>
-
+#import <AVFoundation/AVFoundation.h>
 
 
 @implementation AppDelegate
@@ -31,7 +31,6 @@
     }else{
         self.window.rootViewController = signUpViewController;
     }
-//    self.window.rootViewController = viewCon;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
