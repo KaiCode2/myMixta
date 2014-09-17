@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface MusicSearchViewController : UICollectionViewController
+
+@property (strong, nonatomic)AVQueuePlayer *player;
 
 @end

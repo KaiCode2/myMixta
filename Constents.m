@@ -21,6 +21,7 @@ NSString *const kPostedBy = @"postedBy";
 NSString *const kPost = @"post";
 
 
-NSString *const kFollowClass = @"Follow";
+NSString *const kFollow = @"follow";
+NSString *const kFollowed = @"followed";
 NSString *const kFollowSender = @"sender";
 NSString *const kFollowReceiver = @"receiver";

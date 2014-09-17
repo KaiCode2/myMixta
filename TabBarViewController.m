@@ -7,10 +7,8 @@
 //
 
 #import "TabBarViewController.h"
-#import "NewsFeedViewController.h"
-#import "ProfileViewController.h"
-#import "FindFriendsViewController.h"
 #import "MusicSearchViewController.h"
+#import "SidePanelViewController.h"
 
 @interface TabBarViewController ()
 
@@ -22,16 +20,14 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        NewsFeedViewController *homeViewCon = [[NewsFeedViewController alloc]init];
-        ProfileViewController *profileViewCon = [[ProfileViewController alloc]init];
-        FindFriendsViewController *friendsViewCon = [[FindFriendsViewController alloc]init];
-        UINavigationController *newsNavCon = [[UINavigationController alloc]initWithRootViewController:homeViewCon];
-        UINavigationController *profileNavCon = [[UINavigationController alloc]initWithRootViewController:profileViewCon];
-        UINavigationController *friendsNavCon = [[UINavigationController alloc]initWithRootViewController:friendsViewCon];
-        MusicSearchViewController *viewCon = [[MusicSearchViewController alloc]init];
+        MusicSearchViewController *musicViewCon = [[MusicSearchViewController alloc]init];
+        UINavigationController *musicNavCon = [[UINavigationController alloc]initWithRootViewController:musicViewCon];
+        SidePanelViewController *panelCon = [[SidePanelViewController alloc]init];
+        UINavigationController *panelNavCon = [[UINavigationController alloc]initWithRootViewController:panelCon];
+        [panelNavCon setNavigationBarHidden:YES];
         
         self = [[UITabBarController alloc]init];
-        self.viewControllers = @[newsNavCon, friendsNavCon, profileNavCon, viewCon];
+        self.viewControllers = @[panelNavCon, musicNavCon];
         [[UITabBar appearance] setBarTintColor:[UIColor blackColor]];
 
     }

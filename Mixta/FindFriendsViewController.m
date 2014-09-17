@@ -11,6 +11,7 @@
 #import "UIImage+crop_image.h"
 #import <Parse/Parse.h>
 #import <QuartzCore/QuartzCore.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface FindFriendsViewController ()  <UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -102,6 +103,11 @@
 }
 
 -(void)search{
+    [self resignKeyboard];
+    MBProgressHUD *hud = [[MBProgressHUD alloc]initWithView:self.collectionView];
+    hud.mode = MBProgressHUDAnimationFade;
+    hud.labelText = @"Searching, please wait";
+    [hud show:YES];
     PFQuery *query = [PFUser query];
     [query whereKey:kUserName containsString:findUserField.text];
     [query whereKeyExists:kProfilePictureKey];
@@ -113,6 +119,7 @@
                                               cancelButtonTitle:nil
                                               otherButtonTitles:@"OK", nil];
         [noText show];
+        [hud hide:YES];
     }else{
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (error) {
@@ -122,9 +129,20 @@
                                                                  cancelButtonTitle:nil
                                                                  otherButtonTitles:@"OK", nil];
                 [errorFindingUsers show];
-            }else{
+                [hud hide:YES];
+            }else if (objects == nil){
+                [hud hide:YES];
+                MBProgressHUD *anotherHud = [MBProgressHUD HUDForView:self.view];
+                anotherHud.mode = MBProgressHUDModeCustomView;
+                anotherHud.labelText = @"no users found";
+                [anotherHud show:YES];
+                [anotherHud hide:YES afterDelay:2.5];
+            }
+            else{
+                [self.users removeAllObjects];
                 [self.users addObjectsFromArray:objects];
                 [self.collectionView reloadData];
+                [hud hide:YES];
             }
         }];
     }
@@ -193,10 +211,19 @@
     
     PFUser *receivingUser = self.users[cellIndexPath.row];
     
-    PFObject *follow = [PFObject objectWithClassName:kFollowClass];
-    follow[kFollowSender] = [PFUser currentUser];
-    follow[kFollowReceiver] = receivingUser;
-    [follow saveInBackground];
+    PFRelation *follow = [[PFUser currentUser] relationForKey:kFollow];
+    [follow addObject:receivingUser];
+    
+    PFRelation *followed = [receivingUser relationForKey:kFollowed];
+    [followed addObject:[PFUser currentUser]];
+    
+    [receivingUser saveInBackground];
+    [[PFUser currentUser]saveInBackground];
+    
+//    PFObject *follow = [PFObject objectWithClassName:kFollowClass];
+//    follow[kFollowSender] = [PFUser currentUser];
+//    follow[kFollowReceiver] = receivingUser;
+//    [follow saveInBackground];
 }
 
 

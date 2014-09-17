@@ -12,7 +12,7 @@
 #import <Parse/Parse.h>
 #import <RESideMenu/RESideMenu.h>
 #import <AVFoundation/AVFoundation.h>
-
+#import "NewsFeedViewController.h"
 
 @implementation AppDelegate
 
@@ -25,7 +25,7 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     SignInViewController *signUpViewController = [[SignInViewController alloc]init];
     TabBarViewController *tabCon = [[TabBarViewController alloc]init];
-    
+
     if ([PFUser currentUser]) {
         self.window.rootViewController = tabCon;
     }else{

@@ -8,11 +8,12 @@
 
 #import "MusicSearchViewController.h"
 #import "Constents.h"
+#import "PlayViewController.h"
 #import <MBProgressHUD/MBProgressHUD.h>
-#import <AVFoundation/AVFoundation.h>
 #import <Parse/Parse.h>
 
-@interface MusicSearchViewController () <MBProgressHUDDelegate>
+
+@interface MusicSearchViewController () <MBProgressHUDDelegate, AVAudioPlayerDelegate>
 
 @property (strong, nonatomic)UITextField *searchBar;
 @property (strong, nonatomic)UIButton *searchButton;
@@ -24,12 +25,13 @@
 @end
 
 @implementation MusicSearchViewController{
-    AVQueuePlayer *player;
     MBProgressHUD *playHud;
     NSString *trackID;
     NSString *userToken;
     id JSON;
     NSString *songTitle;
+    BOOL isFetching;
+    BOOL isToggleOn;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -40,6 +42,15 @@
         UITabBarItem* tabbar = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"audio.png"] tag:0];
         [tabbar setImageInsets:UIEdgeInsetsMake(7.5, 7.5, 7.5, 7.5)];
         self.tabBarItem = tabbar;
+        
+        NSMutableAttributedString* attrStr = [[NSMutableAttributedString alloc]initWithString: @"Mixta"];
+        [attrStr addAttribute: NSForegroundColorAttributeName value: [UIColor colorWithRed:0 green:0 blue:8 alpha:0.6] range: NSMakeRange(0, 5)];
+        [attrStr addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"SnellRoundhand-Black" size:38.0] range:NSMakeRange(0, 5)];
+        
+        UILabel *titleLabel = [UILabel new];
+        titleLabel.attributedText = attrStr;
+        [titleLabel sizeToFit];
+        self.navigationItem.titleView = titleLabel;
         
         layout.sectionInset = UIEdgeInsetsMake(150, 0, 20, 0);
         
@@ -69,9 +80,10 @@
     
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
     
-    player = [[AVQueuePlayer alloc]init];
+    self.player = [[AVQueuePlayer alloc]init];
     trackID = [[NSString alloc]init];
     userToken = [[NSString alloc]init];
+    isFetching = NO;
     
     // Set AVAudioSession
     NSError *sessionError = nil;
@@ -94,7 +106,7 @@
         }
     };
     
-    self.timeObserver = [player addPeriodicTimeObserverForInterval:CMTimeMake(10, 1000)
+    self.timeObserver = [self.player addPeriodicTimeObserverForInterval:CMTimeMake(10, 1000)
                                                                   queue:dispatch_get_main_queue()
                                                              usingBlock:observerBlock];
     
@@ -119,6 +131,15 @@
     [self.collectionView addGestureRecognizer:resignKeyBoard];
     [self.collectionView addSubview:self.searchButton];
     [self.collectionView addSubview:self.searchBar];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    
+    // Set itself as the first responder
+    [self becomeFirstResponder];
 }
 
 -(void)resignKeyboard{
@@ -255,6 +276,7 @@
 }
 
 -(void)play:(UIButton*)sender{
+    isToggleOn = YES;
     UICollectionViewCell *senderCell = (UICollectionViewCell*)[sender superview];
     NSIndexPath *cellIndexPath = [self.collectionView indexPathForCell:senderCell];
     
@@ -287,13 +309,13 @@
                                     AVAsset *asset = [AVURLAsset URLAssetWithURL:[NSURL URLWithString:[[[JSON objectForKey:@"set"] objectForKey:@"track"] objectForKey:@"url"]] options:nil];
                                     AVPlayerItem *item = [AVPlayerItem playerItemWithAsset:asset];
                                            
-                                    player = [AVQueuePlayer playerWithPlayerItem:item];
-                                    [player addObserver:self
+                                    self.player = [AVQueuePlayer playerWithPlayerItem:item];
+                                    [self.player addObserver:self
                                              forKeyPath:@"status"
                                                 options:0
                                                 context:nil];
                                     
-                                    [player addObserver:self
+                                    [self.player addObserver:self
                                              forKeyPath:@"currentItem"
                                                 options:NSKeyValueObservingOptionNew
                                                 context:nil];
@@ -309,13 +331,15 @@
                          change:(NSDictionary  *)change
                         context:(void *)context {
     
-    if (object == player && [keyPath isEqualToString:@"status"]) {
-        if (player.status == AVPlayerStatusReadyToPlay) {
-            [player play];
+    if (object == self.player && [keyPath isEqualToString:@"status"]) {
+        if (self.player.status == AVPlayerStatusReadyToPlay) {
+            [self.player play];
             [playHud hide:YES];
+            PlayViewController *playViewCon = [[PlayViewController alloc]init];
+            [self.navigationController pushViewController:playViewCon animated:YES];
         }
-        else if (player.status == AVPlayerStatusFailed) {
-            NSLog(@"Something went wrong: %@", player.error);
+        else if (self.player.status == AVPlayerStatusFailed) {
+            NSLog(@"Something went wrong: %@", self.player.error);
             [playHud hide:YES];
         }
     }
@@ -326,30 +350,123 @@
     }
 }
 
--(void)addNextSong{
-    [self removeObserver:self forKeyPath:AVPlayerItemDidPlayToEndTimeNotification];
-    NSString *urlString = [NSString stringWithFormat:@"http://8tracks.com/sets/%@/next.json?mix_id=%@&api_key=2ebc152a9e89f9a8f12316380e8f866138aeb4e8", userToken, trackID];
-    NSURL *url = [NSURL URLWithString:urlString];
-    
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-                               if (connectionError) {
-                                   NSLog(@"connection error while loading next song");
-                               }else{
-                                   id theJSON = [NSJSONSerialization JSONObjectWithData:data
-                                                                             options:0
-                                                                               error:nil];
-                                   AVAsset *asset = [AVURLAsset URLAssetWithURL:[NSURL URLWithString:[[[theJSON objectForKey:@"set"] objectForKey:@"track"] objectForKey:@"url"]] options:nil];
-                                   AVPlayerItem *anItem = [AVPlayerItem playerItemWithAsset:asset];
-                                   
-                                   [player insertItem:anItem afterItem:[[player items] lastObject]];
-                                   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addNextSong) name:AVPlayerItemDidPlayToEndTimeNotification object:anItem];
-                               }
-                           }];
+- (void)remoteControlReceivedWithEvent:(UIEvent *)receivedEvent {
+    if (receivedEvent.type == UIEventTypeRemoteControl) {
+        
+        switch (receivedEvent.subtype) {
+                
+            case UIEventSubtypeMotionShake:
+                NSAssert(NO, @"UIEventSubtypeMotionShake");
+                break;
+            case UIEventSubtypeRemoteControlBeginSeekingBackward:
+                NSAssert(NO, @"UIEventSubtypeRemoteControlBeginSeekingBackward");
+                break;
+            case UIEventSubtypeRemoteControlBeginSeekingForward:
+                NSAssert(NO, @"UIEventSubtypeRemoteControlBeginSeekingForward");
+                break;
+            case UIEventSubtypeRemoteControlEndSeekingForward:
+                NSAssert(NO, @"UIEventSubtypeRemoteControlEndSeekingForward");
+                break;
+            case UIEventSubtypeRemoteControlPreviousTrack:
+                NSAssert(NO, @"UIEventSubtypeRemoteControlPreviousTrack");
+                break;
+            case UIEventSubtypeRemoteControlTogglePlayPause:
+                if (isToggleOn == YES) {
+                    [self.player pause];
+                    isToggleOn = NO;
+                }else{
+                    [self.player play];
+                    isToggleOn = YES;
+                }
+                break;
+            case UIEventSubtypeRemoteControlNextTrack:
+                [self skipToNext];
+                break;
+                
+            case UIEventSubtypeRemoteControlPlay:
+                [self.player play];
+                isToggleOn = YES;
+                break;
+            case UIEventSubtypeRemoteControlPause:
+                [self.player pause];
+                isToggleOn = NO;
+                break;
+            default:
+                NSLog(@"receivedEvent.subtype: %ld", receivedEvent.subtype);
+                break;
+        }
+    }
 }
 
+
+-(void)addNextSong{
+    if (isFetching == NO) {
+        isToggleOn = YES;
+        isFetching = YES;
+        @try {
+            [self removeObserver:self forKeyPath:AVPlayerItemDidPlayToEndTimeNotification];
+        }
+        @catch (NSException * __unused exception) {/*solving raise condition crash*/}
+        
+        NSString *urlString = [NSString stringWithFormat:@"http://8tracks.com/sets/%@/next.json?mix_id=%@&api_key=2ebc152a9e89f9a8f12316380e8f866138aeb4e8", userToken, trackID];
+        NSURL *url = [NSURL URLWithString:urlString];
+        
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        [NSURLConnection sendAsynchronousRequest:request
+                                           queue:[NSOperationQueue mainQueue]
+                               completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                                   if (connectionError) {
+                                       NSLog(@"connection error while loading next song");
+                                       isFetching = NO;
+                                   }else{
+                                       id theJSON = [NSJSONSerialization JSONObjectWithData:data
+                                                                                    options:0
+                                                                                      error:nil];
+                                       AVAsset *asset = [AVURLAsset URLAssetWithURL:[NSURL URLWithString:[[[theJSON objectForKey:@"set"] objectForKey:@"track"] objectForKey:@"url"]] options:nil];
+                                       AVPlayerItem *anItem = [AVPlayerItem playerItemWithAsset:asset];
+                                       
+                                       [self.player insertItem:anItem afterItem:[[self.player items] lastObject]];
+                                       [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addNextSong) name:AVPlayerItemDidPlayToEndTimeNotification object:anItem];
+                                       isFetching = NO;
+                                   }
+                               }];
+    }
+}
+
+-(void)skipToNext{
+    if (isFetching == NO) {
+        //TODO: hacky, dont do this change it asap
+        isFetching = YES;
+        @try {
+            [self removeObserver:self forKeyPath:AVPlayerItemDidPlayToEndTimeNotification];
+        }
+        @catch (NSException * __unused exception) {/*solving raise condition crash*/}
+        
+        NSString *urlString = [NSString stringWithFormat:@"http://8tracks.com/sets/%@/next.json?mix_id=%@&api_key=2ebc152a9e89f9a8f12316380e8f866138aeb4e8", userToken, trackID];
+        NSURL *url = [NSURL URLWithString:urlString];
+        
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        [NSURLConnection sendAsynchronousRequest:request
+                                           queue:[NSOperationQueue mainQueue]
+                               completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                                   if (connectionError) {
+                                       NSLog(@"connection error while loading next song");
+                                       isFetching = NO;
+                                   }else{
+                                       id theJSON = [NSJSONSerialization JSONObjectWithData:data
+                                                                                    options:0
+                                                                                      error:nil];
+                                       AVAsset *asset = [AVURLAsset URLAssetWithURL:[NSURL URLWithString:[[[theJSON objectForKey:@"set"] objectForKey:@"track"] objectForKey:@"url"]] options:nil];
+                                       AVPlayerItem *anItem = [AVPlayerItem playerItemWithAsset:asset];
+                                       
+                                       [self.player insertItem:anItem afterItem:[[self.player items] lastObject]];
+                                       [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addNextSong) name:AVPlayerItemDidPlayToEndTimeNotification object:anItem];
+                                       isFetching = NO;
+                                       [self.player advanceToNextItem];
+                                   }
+                               }];
+    }
+}
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;

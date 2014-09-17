@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		120C113D19C37E5800C1E04F /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 120C113C19C37E5800C1E04F /* PlayViewController.m */; };
 		1214144819B651F100BD3F8E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1214144519B651F100BD3F8E /* Bolts.framework */; };
 		1214144919B651F100BD3F8E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1214144619B651F100BD3F8E /* Parse.framework */; };
 		1214144A19B651F100BD3F8E /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1214144719B651F100BD3F8E /* ParseFacebookUtils.framework */; };
@@ -59,6 +60,8 @@
 		1270E66019B9282900F19302 /* rounded25.png in Resources */ = {isa = PBXBuildFile; fileRef = 1270E65F19B9282900F19302 /* rounded25.png */; };
 		1270E66219BA357C00F19302 /* cloud263.png in Resources */ = {isa = PBXBuildFile; fileRef = 1270E66119BA357C00F19302 /* cloud263.png */; };
 		1270E66519BA36C700F19302 /* UIImage+crop_image.m in Sources */ = {isa = PBXBuildFile; fileRef = 1270E66419BA36C700F19302 /* UIImage+crop_image.m */; };
+		12A821B319C8E5DE0061DB66 /* SidePanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A821B219C8E5DE0061DB66 /* SidePanelViewController.m */; };
+		12A821B719C8EBE70061DB66 /* LeftSidePanelContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A821B619C8EBE70061DB66 /* LeftSidePanelContentViewController.m */; };
 		C08B6872E76748559B12D8DC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0889530C9C3458381C6259B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +76,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		120C113B19C37E5800C1E04F /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
+		120C113C19C37E5800C1E04F /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
 		1214144519B651F100BD3F8E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		1214144619B651F100BD3F8E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		1214144719B651F100BD3F8E /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
@@ -91,8 +96,8 @@
 		125EE0B719BE2D9200555B5F /* MusicSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicSearchViewController.h; sourceTree = "<group>"; };
 		125EE0B819BE2D9200555B5F /* MusicSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicSearchViewController.m; sourceTree = "<group>"; };
 		125EE0BB19BFB4E500555B5F /* searcgBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searcgBackground.png; sourceTree = "<group>"; };
-		125EE0C019C0DB1100555B5F /* play15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play15.png; sourceTree = "<group>"; };
-		125EE0C119C0DB1100555B5F /* share10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share10.png; sourceTree = "<group>"; };
+		125EE0C019C0DB1100555B5F /* play15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play15.png; path = "png 3/play15.png"; sourceTree = "<group>"; };
+		125EE0C119C0DB1100555B5F /* share10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = share10.png; path = "png 3/share10.png"; sourceTree = "<group>"; };
 		125EE0C419C0F2D200555B5F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		125EE10919C119E600555B5F /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		125EE10A19C119E600555B5F /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
@@ -141,6 +146,10 @@
 		1270E66119BA357C00F19302 /* cloud263.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud263.png; sourceTree = "<group>"; };
 		1270E66319BA36C700F19302 /* UIImage+crop_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+crop_image.h"; path = "../UIImage+crop_image.h"; sourceTree = "<group>"; };
 		1270E66419BA36C700F19302 /* UIImage+crop_image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+crop_image.m"; path = "../UIImage+crop_image.m"; sourceTree = "<group>"; };
+		12A821B119C8E5DE0061DB66 /* SidePanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidePanelViewController.h; sourceTree = "<group>"; };
+		12A821B219C8E5DE0061DB66 /* SidePanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidePanelViewController.m; sourceTree = "<group>"; };
+		12A821B519C8EBE70061DB66 /* LeftSidePanelContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSidePanelContentViewController.h; sourceTree = "<group>"; };
+		12A821B619C8EBE70061DB66 /* LeftSidePanelContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSidePanelContentViewController.m; sourceTree = "<group>"; };
 		1E5DDF469D934893862BCE62 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E0889530C9C3458381C6259B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -185,6 +194,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		120C113E19C8CF8600C1E04F /* Sub social */ = {
+			isa = PBXGroup;
+			children = (
+				1270E64B19B7C8ED00F19302 /* FindFriendsViewController.h */,
+				1270E64C19B7C8ED00F19302 /* FindFriendsViewController.m */,
+				1270E64719B7C82C00F19302 /* ProfileViewController.h */,
+				1270E64819B7C82C00F19302 /* ProfileViewController.m */,
+			);
+			name = "Sub social";
+			sourceTree = "<group>";
+		};
+		120C113F19C8CFA700C1E04F /* Sub music */ = {
+			isa = PBXGroup;
+			children = (
+				120C113B19C37E5800C1E04F /* PlayViewController.h */,
+				120C113C19C37E5800C1E04F /* PlayViewController.m */,
+			);
+			name = "Sub music";
+			sourceTree = "<group>";
+		};
 		1214144419B651F100BD3F8E /* parse-library-1.2.21 */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,17 +230,9 @@
 			children = (
 				125EE0B719BE2D9200555B5F /* MusicSearchViewController.h */,
 				125EE0B819BE2D9200555B5F /* MusicSearchViewController.m */,
+				120C113F19C8CFA700C1E04F /* Sub music */,
 			);
 			name = Music;
-			sourceTree = "<group>";
-		};
-		125EE0BF19C0DB1100555B5F /* png 3 */ = {
-			isa = PBXGroup;
-			children = (
-				125EE0C019C0DB1100555B5F /* play15.png */,
-				125EE0C119C0DB1100555B5F /* share10.png */,
-			);
-			path = "png 3";
 			sourceTree = "<group>";
 		};
 		125EE11319C23E9E00555B5F /* models */ = {
@@ -277,6 +298,7 @@
 				1270E65A19B8F7A900F19302 /* Constents.h */,
 				1270E65B19B8F7A900F19302 /* Constents.m */,
 				125EE11319C23E9E00555B5F /* models */,
+				12A821B419C8E5E50061DB66 /* Controllers */,
 				1270E62E19B6720900F19302 /* Views */,
 				1270E60A19B64BE600F19302 /* Images.xcassets */,
 				1270E63D19B773CD00F19302 /* images */,
@@ -322,6 +344,8 @@
 			children = (
 				125EE10919C119E600555B5F /* TabBarViewController.h */,
 				125EE10A19C119E600555B5F /* TabBarViewController.m */,
+				12A821B519C8EBE70061DB66 /* LeftSidePanelContentViewController.h */,
+				12A821B619C8EBE70061DB66 /* LeftSidePanelContentViewController.m */,
 				1270E63819B6811400F19302 /* Sign in and sign up */,
 				1270E64A19B7C83D00F19302 /* Social */,
 				125EE0BA19BE2D9900555B5F /* Music */,
@@ -347,7 +371,8 @@
 			isa = PBXGroup;
 			children = (
 				125EE10C19C11F9E00555B5F /* audio.png */,
-				125EE0BF19C0DB1100555B5F /* png 3 */,
+				125EE0C019C0DB1100555B5F /* play15.png */,
+				125EE0C119C0DB1100555B5F /* share10.png */,
 				125EE0BB19BFB4E500555B5F /* searcgBackground.png */,
 				1270E66119BA357C00F19302 /* cloud263.png */,
 				1270E65F19B9282900F19302 /* rounded25.png */,
@@ -369,12 +394,19 @@
 			children = (
 				1270E63519B677B400F19302 /* NewsFeedViewController.h */,
 				1270E63619B677B400F19302 /* NewsFeedViewController.m */,
-				1270E64B19B7C8ED00F19302 /* FindFriendsViewController.h */,
-				1270E64C19B7C8ED00F19302 /* FindFriendsViewController.m */,
-				1270E64719B7C82C00F19302 /* ProfileViewController.h */,
-				1270E64819B7C82C00F19302 /* ProfileViewController.m */,
+				120C113E19C8CF8600C1E04F /* Sub social */,
 			);
 			name = Social;
+			sourceTree = "<group>";
+		};
+		12A821B419C8E5E50061DB66 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				12A821B119C8E5DE0061DB66 /* SidePanelViewController.h */,
+				12A821B219C8E5DE0061DB66 /* SidePanelViewController.m */,
+			);
+			name = Controllers;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -524,11 +556,14 @@
 			files = (
 				1270E63419B6723700F19302 /* SignInViewController.m in Sources */,
 				1270E64D19B7C8ED00F19302 /* FindFriendsViewController.m in Sources */,
+				120C113D19C37E5800C1E04F /* PlayViewController.m in Sources */,
 				1270E65C19B8F7A900F19302 /* Constents.m in Sources */,
 				1270E64019B7848300F19302 /* IntroViewController.m in Sources */,
 				125EE10B19C119E600555B5F /* TabBarViewController.m in Sources */,
 				1270E60919B64BE600F19302 /* AppDelegate.m in Sources */,
 				1270E60519B64BE600F19302 /* main.m in Sources */,
+				12A821B719C8EBE70061DB66 /* LeftSidePanelContentViewController.m in Sources */,
+				12A821B319C8E5DE0061DB66 /* SidePanelViewController.m in Sources */,
 				1270E64919B7C82C00F19302 /* ProfileViewController.m in Sources */,
 				1270E66519BA36C700F19302 /* UIImage+crop_image.m in Sources */,
 				1270E63719B677B400F19302 /* NewsFeedViewController.m in Sources */,

@@ -10,4 +10,6 @@
 
 @interface NewsFeedViewController : UICollectionViewController
 
+@property (strong, nonatomic)UINavigationController *newsNavigationController;
+
 @end

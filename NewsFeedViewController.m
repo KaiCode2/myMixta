@@ -57,9 +57,9 @@
     postContent = [[NSString alloc]init];
     
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
-    
+    self.newsNavigationController = self.navigationController;
     self.posts = [[NSMutableArray alloc]init];
-    
+
     postField = [[UITextField alloc]initWithFrame:CGRectMake(self.view.center.x - 125, 50, 200, 40)];
     postField.placeholder = @"Post";
     postField.backgroundColor = [UIColor whiteColor];
@@ -89,10 +89,9 @@
 }
 
 -(void)getPosts{
-    PFQuery *query = [PFQuery queryWithClassName:kFollowClass];
-    [query whereKey:kFollowSender equalTo:[PFUser currentUser]];
-    [query whereKeyExists:kFollowReceiver];
-    [query orderByDescending:kFollowReceiver];
+    PFRelation *postQuery = [[PFUser currentUser] relationForKey:kFollow];
+    PFQuery *query = [postQuery query];
+    [query whereKeyExists:kFollow];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
@@ -131,7 +130,6 @@
             
             [postsQuery findObjectsInBackgroundWithBlock:^(NSArray *theSecoundObjects, NSError *error) {
                 if (error) {
-                    
                     NSLog(@"an error occured while getting posts");
                     MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.collectionView];
                     hud.customView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"cloud263.png"]];
@@ -225,7 +223,6 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return [self.posts count];
-//    return 5;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -245,7 +242,6 @@
     PFUser *aUser = self.posts[indexPath.row][kPostedBy];
     NSLog(@"the post content is %@", [self.posts[indexPath.row]objectForKey:kPost]);
     postContentLabel.text = [self.posts[indexPath.row]objectForKey:kPost];
-//    postContentLabel.text = self.posts[indexPath.row];
     [aUser fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         if (error) {
             NSLog(@"failed to get profile picture");
@@ -267,13 +263,6 @@
     [cell addSubview:userNameLabel];
     [cell addSubview:profileView];
     return cell;
-}
-
--(UITabBarItem*)tabBarItem{
-    //TODO: move to init
-    UITabBarItem* tabbar = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"letter28.png"] tag:0];
-    [tabbar setImageInsets:UIEdgeInsetsMake(15, 15, 15, 15)];
-    return tabbar;
 }
 
 @end

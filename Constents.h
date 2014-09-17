@@ -22,7 +22,8 @@ extern NSString *const kPost;
 extern NSString *const kPostedBy;
 
 
-extern NSString *const kFollowClass;
+extern NSString *const kFollow;
+extern NSString *const kFollowed;
 extern NSString *const kFollowSender;
 extern NSString *const kFollowReceiver;
 

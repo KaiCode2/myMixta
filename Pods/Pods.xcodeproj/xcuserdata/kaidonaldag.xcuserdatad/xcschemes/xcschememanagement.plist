@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-BPForms.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-CocoaSoundCloudAPI.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -19,17 +14,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-JVFloatLabeledTextField.xcscheme</key>
+		<key>Pods-JASidePanels.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-MBProgressHUD.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -62,57 +52,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>12202C161F30472087E995A9</key>
+		<key>086591E76EEB408AB9895521</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>199C515E258046148188D632</key>
+		<key>24BC7E562867492C8428E44B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>246975CCB6034FEBAD801FE4</key>
+		<key>856B1E1FB7C544518CA518CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>48D94368D546410ABDC6E378</key>
+		<key>85AE42665A294121B8F8994A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>625542E2E7574AA99EE6A415</key>
+		<key>91ECFD9AB16840E0BE04CD7D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7AC8D231BB224FBB8CD4BAEF</key>
+		<key>AA586164776F413EAAE24BB0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>83B2DFDC85B44461A5AB70DD</key>
+		<key>D0BFF5C25E6D4F2AB52D78FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9A9F4B885A4142BA9DB8DF50</key>
+		<key>DFD083CE001B4E7CB2E09EF0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CEC6416E63E148FDB060EF1A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CF8D5565AF284D279694A983</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F682DDA36B694C229FBC8279</key>
+		<key>E5963A8D5EBF465983A065D9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

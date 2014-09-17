@@ -70,6 +70,7 @@
     }
     
     [self.view addSubview:imageView];
+    
 }
 
 -(UITabBarItem*)tabBarItem{
